@@ -1,0 +1,47 @@
+{
+    "workbench.colorTheme": "Horizon",
+    "workbench.startupEditor": "newUntitledFile",
+    "window.menuBarVisibility": "toggle",
+    "workbench.statusBar.visible": true,
+    "workbench.activityBar.visible": true,
+    "editor.minimap.enabled": false,
+    "files.defaultLanguage": "html",
+    "editor.fontSize": 16,
+    "workbench.editor.tabSizing": "shrink",
+    "editor.detectIndentation": false,
+    "editor.folding": false,
+    "editor.glyphMargin": false,
+    "editor.smoothScrolling": true,
+    "emmet.triggerExpansionOnTab": true,
+    "editor.quickSuggestions": {
+    "other": true,
+    "comments": true,
+    "strings": true
+    },
+    "editor.suggestOnTriggerCharacters": false,
+    "terminal.integrated.fontSize": 15,
+    "editor.renderWhitespace": "boundary",
+    "editor.wordWrap": "on",
+    "C_Cpp.updateChannel": "Insiders",
+    "editor.useTabStops": false,
+    "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "liveServer.settings.donotShowInfoMsg": true,
+    "window.zoomLevel": 0,
+    "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+    "shellLauncher.shells.windows": [
+        {
+            "shell": "C:\\WINDOWS\\System32\\cmd.exe",
+            "label": "cmd"
+        },
+        {
+            "shell": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+            "label": "PowerShell"
+        },
+        {
+            "shell": "C:\\Program Files\\Git\\bin\\bash.exe",
+            "label": "Git bash"
+        },
+    ]
+    }
