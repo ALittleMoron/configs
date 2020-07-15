@@ -132,20 +132,9 @@ let g:airline#extensions#tabline#formatter = 'unique_tail'
 
 
 " NerdTree настройки
-" показать NERDTree на F3
-map <F3> :NERDTreeToggle<CR>
-
 
 "игноррируемые файлы с расширениями
 let NERDTreeIgnore=['\~$', '\.pyc$', '\.pyo$', '\.class$', 'pip-log\.txt$', '\.o$']  
-
-
-" TaskList настройки
-map <F2> :TaskList<CR> 	   " отобразить список тасков на F2
-
-
-" Работа буфферами
-map <C-q> :bd<CR> 	   " CTRL+Q - закрыть текущий буффер
 
 
 "=====================================================
@@ -204,15 +193,30 @@ let g:jedi#popup_select_first = 0
 "=====================================================
 " User hotkeys
 "=====================================================
-" ConqueTerm
-" запуск интерпретатора на F5
-nnoremap <F4> :ConqueTermSplit ipython<CR>
+
+" TaskList настройки
+map <F2> :TaskList<CR> 	   " отобразить список тасков на F2
 
 
-" а debug-mode на <F6>
+" показать NERDTree на F3
+map <F3> :NERDTreeToggle<CR>
+
+
+" Работа буфферами
+map <C-q> :bd<CR> 	   " CTRL+Q - закрыть текущий буффер
+
+
+" пока что ничего нет на F4
+
+
+" а debug-mode на <F5>
 nnoremap <F5> :exe "ConqueTermSplit ipython " . expand("%")<CR>
 let g:ConqueTerm_StartMessages = 0
 let g:ConqueTerm_CloseOnEnd = 0
+
+
+" запуск интерпретатора на F6
+nnoremap <F6> :ConqueTermSplit ipython<CR>
 
 
 " проверка кода в соответствии с PEP8 через <leader>8
@@ -221,7 +225,6 @@ autocmd FileType python map <buffer> <leader>8 :PymodeLint<CR>
 
 " автокомплит через <Ctrl+Space>
 inoremap <C-space> <C-x><C-o>
-
 
 
 
