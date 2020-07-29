@@ -56,7 +56,7 @@ aunmenu Window.
 let no_buffers_menu=1
 set mousemodel=popup
 set linebreak
-set noswapfile
+
 
 set ruler
 set completeopt-=preview
