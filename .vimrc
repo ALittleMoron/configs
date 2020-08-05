@@ -45,6 +45,7 @@ call vundle#end()            		" required
 filetype on
 filetype plugin on
 filetype plugin indent on
+let g:pymode_python = 'python'
 
 
 "=====================================================
@@ -265,7 +266,3 @@ autocmd FileType html,xhtml,xml,htmldjango,htmljinja,eruby,mako source ~/.vim/sc
 " --- CSS ---
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType css setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
-
-
-
-
