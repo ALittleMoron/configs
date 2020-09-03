@@ -46,7 +46,7 @@ call vundle#end()            		" required
 filetype on
 filetype plugin on
 filetype plugin indent on
-let g:pymode_python = 'python'
+let g:pymode_python = 'python3'
 
 
 "=====================================================
