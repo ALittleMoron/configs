@@ -212,13 +212,13 @@ map <C-q> :bd<CR> 	   " CTRL+Q - закрыть текущий буффер
 
 
 " а debug-mode на <F5>
-nnoremap <F5> :exe "ConqueTermSplit ipython " . expand("%")<CR>
+nnoremap <F5> :exe "ConqueTermSplit ipython3 " . expand("%")<CR>
 let g:ConqueTerm_StartMessages = 0
 let g:ConqueTerm_CloseOnEnd = 0
 
 
 " запуск интерпретатора на F6
-nnoremap <F6> :ConqueTermSplit ipython<CR>
+nnoremap <F6> :ConqueTermSplit ipython3<CR>
 
 
 " проверка кода в соответствии с PEP8 через <leader>8
