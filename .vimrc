@@ -181,8 +181,11 @@ let g:ConqueTerm_CloseOnEnd = 0
 nnoremap <F6> :ConqueTermSplit ipython3<CR>
 
 
-" проверка кода в соответствии с PEP8 через <leader>8
-autocmd FileType python map <buffer> <leader>8 :PymodeLint<CR>
+" на F7 забит flake8
+" на F8 забито переключение тем vim
+
+
+" пока что ничего нет на F9
 
 
 " автокомплит через <Ctrl+Space>
