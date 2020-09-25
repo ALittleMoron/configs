@@ -1,5 +1,5 @@
 {
-    "workbench.colorTheme": "Horizon",
+    "workbench.colorTheme": "Atom One Dark",
     "workbench.startupEditor": "newUntitledFile",
     "window.menuBarVisibility": "toggle",
     "workbench.statusBar.visible": true,
@@ -22,7 +22,6 @@
     "terminal.integrated.fontSize": 15,
     "editor.renderWhitespace": "boundary",
     "editor.wordWrap": "on",
-    "C_Cpp.updateChannel": "Insiders",
     "editor.useTabStops": false,
     "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -43,5 +42,6 @@
             "shell": "C:\\Program Files\\Git\\bin\\bash.exe",
             "label": "Git bash"
         },
-    ]
+    ],
+    "workbench.iconTheme": "vscode-icons"
     }
