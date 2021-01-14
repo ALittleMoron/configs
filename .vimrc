@@ -190,6 +190,8 @@ nnoremap <F6> :ConqueTermSplit ipython3<CR>
 inoremap <C-space> <C-x><C-o>
 
 
+" документация по функции через <K>
+
 
 "=====================================================
 " Languages support
