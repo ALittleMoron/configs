@@ -44,6 +44,7 @@ Plugin 'mitsuhiko/vim-jinja'		" Jinja support for vim
 Plugin 'mitsuhiko/vim-python-combined'  " Combined Python 2/3 for Vim
 Plugin 'vim-syntastic/syntastic'        " syntax highlighting
 Plugin 'nvie/vim-flake8'                " PEP8 checking in python
+Plugin 'vim-python/python-syntax'       " python3 syntax highlight support
 
 
 call vundle#end()            		" required
@@ -72,7 +73,7 @@ set ttyfast
 
 " включить подсветку кода
 syntax on
-let python_highlight_all=1
+let g:python_highlight_all=1
 
 " базовый визуал
 set t_Co=256
@@ -149,8 +150,9 @@ let g:syntastic_always_populate_loc_list = 0
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_python_python_exec = 'python3'
 
-"=====================================================
+
 " User hotkeys
 "=====================================================
 
@@ -190,7 +192,7 @@ nnoremap <F6> :ConqueTermSplit ipython3<CR>
 inoremap <C-space> <C-x><C-o>
 
 
-" документация по функции через <K>
+" Документация по функции через <K> (Jedi)
 
 
 "=====================================================
@@ -202,6 +204,7 @@ autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=8
 \ formatoptions+=croq softtabstop=4 smartindent
 \ cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 autocmd FileType pyrex setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4 smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class,with
+
 
 
 " --- JavaScript ---
