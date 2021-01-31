@@ -44,7 +44,6 @@ Plugin 'mitsuhiko/vim-jinja'		" Jinja support for vim
 Plugin 'mitsuhiko/vim-python-combined'  " Combined Python 2/3 for Vim
 Plugin 'vim-syntastic/syntastic'        " syntax highlighting
 Plugin 'nvie/vim-flake8'                " PEP8 checking in python
-Plugin 'vim-python/python-syntax'       " python3 syntax highlight support
 
 
 call vundle#end()            		" required
