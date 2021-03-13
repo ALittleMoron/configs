@@ -58,10 +58,17 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
+gitPS1(){
+    gitps1=$(git branch 2>/dev/null | grep '*')
+    gitps1="${gitps1:+(${gitps1/#\* /})}"
+    echo "$gitps1"
+}
+
+
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\[\033[0;31m\]$(gitPS1)\[\033[00m\] \$ '
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u:\w\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\$ '
 fi
 unset color_prompt force_color_prompt
 
