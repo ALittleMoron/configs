@@ -28,7 +28,7 @@
     },
     "liveServer.settings.donotShowInfoMsg": true,
     "window.zoomLevel": 0,
-    "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+    "terminal.integrated.shell.windows": "C:\\Windows\\System32\\wsl.exe",
     "shellLauncher.shells.windows": [
         {
             "shell": "C:\\WINDOWS\\System32\\cmd.exe",
@@ -42,6 +42,17 @@
             "shell": "C:\\Program Files\\Git\\bin\\bash.exe",
             "label": "Git bash"
         },
+        {
+            "shell": "C:\\WINDOWS\\System32\\wsl.exe",
+            "label": "WSL"
+        }
     ],
-    "workbench.iconTheme": "vscode-icons"
+    "workbench.iconTheme": "vscode-icons",
+    "vsicons.dontShowNewVersionMessage": true,
+    "workbench.editorAssociations": [
+        {
+            "viewType": "jupyter.notebook.ipynb",
+            "filenamePattern": "*.ipynb"
+        }
+    ]
     }
