@@ -1,4 +1,10 @@
 {
+    /* VIM SETTINGS */
+    "vim.easymotion": true,
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+
+    /* OTHER SETTINGS */
     "workbench.colorTheme": "Atom One Dark",
     "workbench.startupEditor": "newUntitledFile",
     "window.menuBarVisibility": "toggle",
