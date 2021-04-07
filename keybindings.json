@@ -1,4 +1,16 @@
 // Поместите настраиваемые сочетания клавиш в этот файл, чтобы переопределить сочетания клавиш по умолчанию.
 [
-    { "key": "ctrl+alt+'", "command": "shellLauncher.launch" }
+    {
+        "key": "ctrl+alt+'",
+        "command": "shellLauncher.launch"
+    },
+    {
+        "key": "ctrl+shift+c",
+        "command": "-workbench.action.terminal.openNativeConsole",
+        "when": "!terminalFocus"
+    },
+    {
+        "key": "ctrl+alt+s",
+        "command": "vim-search-and-replace.start",
+    },
 ]
