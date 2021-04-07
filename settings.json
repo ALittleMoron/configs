@@ -27,7 +27,6 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "liveServer.settings.donotShowInfoMsg": true,
-    "window.zoomLevel": 0,
     "terminal.integrated.shell.windows": "C:\\Windows\\System32\\wsl.exe",
     "shellLauncher.shells.windows": [
         {
@@ -61,5 +60,6 @@
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "python.languageServer": "Microsoft",
-    "workspace.searchEnabled": true
+    "workspace.searchEnabled": true,
+    "python.formatting.provider": "autopep8"
     }
