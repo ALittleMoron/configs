@@ -59,7 +59,9 @@
     },
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "python.languageServer": "Microsoft",
     "workspace.searchEnabled": true,
-    "python.formatting.provider": "autopep8"
+    "python.languageServer": "Microsoft",
+    "python.formatting.provider": "autopep8",
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true
     }
