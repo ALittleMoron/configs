@@ -1,6 +1,6 @@
 {
     // editor
-    "workbench.colorTheme": "Atom One Dark",
+    "workbench.colorTheme": "GitHub Dark",
     "workbench.iconTheme": "material-icon-theme",
     "workbench.startupEditor": "newUntitledFile",
     "window.menuBarVisibility": "toggle",
@@ -67,7 +67,8 @@
     "workspace.searchEnabled": true,
     "python.languageServer": "Microsoft",
     "python.formatting.provider": "autopep8",
-    "python.linting.flake8Enabled": true,
+    "python.linting.mypyEnabled": true,
     "python.linting.enabled": true,
+    "python.linting.lintOnSave": true,
     "python.pythonPath": "C:\\Users\\ALittleMoron\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
 }
