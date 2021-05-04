@@ -18,7 +18,13 @@
         "command": "workbench.action.toggleZenMode"
     },
     {
-        "key": "ctrl+k z",
-        "command": "-workbench.action.toggleZenMode"
+        "key": "ctrl+alt+f",
+        "command": "actions.find",
+        "when": "editorFocus || editorIsOpen"
+    },
+    {
+        "key": "ctrl+f",
+        "command": "-actions.find",
+        "when": "editorFocus || editorIsOpen"
     },
 ]
