@@ -13,4 +13,12 @@
         "key": "ctrl+alt+s",
         "command": "vim-search-and-replace.start",
     },
+    {
+        "key": "ctrl+alt+z",
+        "command": "workbench.action.toggleZenMode"
+    },
+    {
+        "key": "ctrl+k z",
+        "command": "-workbench.action.toggleZenMode"
+    },
 ]
