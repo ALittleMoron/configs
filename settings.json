@@ -80,6 +80,7 @@
     "vim.incsearch": true,
     "editor.lineNumbers": "on",
     "vim.handleKeys": {
-        "<C-k>": false
+        "<C-k>": false,
+        "<C-j>": false
     }
 }
