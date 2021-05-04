@@ -78,5 +78,8 @@
     "vim.useCtrlKeys": true,
     "vim.hlsearch": true,
     "vim.incsearch": true,
-    "editor.lineNumbers": "on"
+    "editor.lineNumbers": "on",
+    "vim.handleKeys": {
+        "<C-k>": false
+    }
 }
