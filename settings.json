@@ -66,7 +66,7 @@
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "workspace.searchEnabled": true,
     "python.languageServer": "Microsoft",
-    "python.formatting.provider": "autopep8",
+    "python.formatting.provider": "black",
     "python.linting.mypyEnabled": true,
     "python.linting.enabled": true,
     "python.linting.lintOnSave": true,
