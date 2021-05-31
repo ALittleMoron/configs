@@ -70,7 +70,6 @@
     "python.linting.mypyEnabled": true,
     "python.linting.enabled": true,
     "python.linting.lintOnSave": true,
-    "python.pythonPath": "C:\\Users\\ALittleMoron\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
 
     // "Vim emulation for Visual Studio Code"
     "vim.easymotion": true,
