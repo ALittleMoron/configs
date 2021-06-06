@@ -15,11 +15,12 @@
     "editor.glyphMargin": false,
     "editor.smoothScrolling": true,
     "emmet.triggerExpansionOnTab": true,
+    "editor.tabCompletion": "on",
     "editor.quickSuggestions": 
         {
             "other": true,
-            "comments": true,
-            "strings": true
+            "comments": false,
+            "strings": false
         },
     "editor.suggestOnTriggerCharacters": false,
     "terminal.integrated.fontSize": 16,
