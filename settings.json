@@ -28,7 +28,7 @@
     "editor.wordWrap": "on",
     "editor.useTabStops": false,
     "vsicons.dontShowNewVersionMessage": true,
-    "editor.rulers": [79],
+    "editor.rulers": [80],
 
     // extensions
     "[jsonc]": 
