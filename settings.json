@@ -36,7 +36,6 @@
             "editor.defaultFormatter": "esbenp.prettier-vscode"
         },
     "liveServer.settings.donotShowInfoMsg": true,
-    "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
     "shellLauncher.shells.windows": 
         [
             {
@@ -53,12 +52,9 @@
             }
         ],
     "workbench.editorAssociations": 
-        [
-            {
-                "viewType": "jupyter.notebook.ipynb",
-                "filenamePattern": "*.ipynb"
-            }
-        ],
+        {
+            "*.ipynb": "jupyter.notebook.ipynb"
+        },
     "[html]": 
         {
             "editor.defaultFormatter": "esbenp.prettier-vscode"
