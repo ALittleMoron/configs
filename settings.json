@@ -3,6 +3,7 @@
     "workbench.colorTheme": "GitHub Dark",
     "workbench.iconTheme": "material-icon-theme",
     "workbench.startupEditor": "newUntitledFile",
+    "terminal.integrated.cursorStyle": "line", 
     "window.menuBarVisibility": "toggle",
     "workbench.statusBar.visible": true,
     "workbench.activityBar.visible": true,
@@ -19,8 +20,8 @@
     "editor.quickSuggestions": 
         {
             "other": true,
-            "comments": false,
-            "strings": false
+            "comments": true,
+            "strings": true
         },
     "editor.suggestOnTriggerCharacters": false,
     "terminal.integrated.fontSize": 16,
@@ -67,6 +68,7 @@
     "python.linting.mypyEnabled": true,
     "python.linting.enabled": true,
     "python.linting.lintOnSave": true,
+    "python.terminal.activateEnvironment": true,
 
     // "Vim emulation for Visual Studio Code"
     "vim.easymotion": true,
