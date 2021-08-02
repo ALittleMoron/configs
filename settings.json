@@ -1,84 +1,105 @@
 {
-    // editor
-    "workbench.colorTheme": "GitHub Dark",
-    "workbench.iconTheme": "material-icon-theme",
-    "workbench.startupEditor": "newUntitledFile",
-    "terminal.integrated.cursorStyle": "line", 
-    "window.menuBarVisibility": "toggle",
-    "workbench.statusBar.visible": true,
-    "workbench.activityBar.visible": true,
-    "editor.minimap.enabled": false,
-    "files.defaultLanguage": "python",
-    "editor.fontSize": 16,
-    "workbench.editor.tabSizing": "shrink",
+    // -------- editor -------- //
     "editor.detectIndentation": false,
     "editor.folding": false,
+    "editor.fontSize": 16,
     "editor.glyphMargin": false,
-    "editor.smoothScrolling": true,
-    "emmet.triggerExpansionOnTab": true,
-    "editor.tabCompletion": "on",
-    "editor.quickSuggestions": 
-        {
-            "other": true,
-            "comments": true,
-            "strings": true
-        },
-    "editor.suggestOnTriggerCharacters": false,
-    "terminal.integrated.fontSize": 16,
+    "editor.lineNumbers": "on",
+    "editor.minimap.enabled": false,
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": true,
+        "strings": true
+    },
     "editor.renderWhitespace": "boundary",
-    "editor.wordWrap": "on",
-    "editor.useTabStops": false,
-    "vsicons.dontShowNewVersionMessage": true,
     "editor.rulers": [80],
-
-    // extensions
-    "[jsonc]": 
-        {
-            "editor.defaultFormatter": "esbenp.prettier-vscode"
-        },
-    "liveServer.settings.donotShowInfoMsg": true,
-    "shellLauncher.shells.windows": 
-        [
-            {
-                "shell": "C:\\WINDOWS\\System32\\cmd.exe",
-                "label": "cmd"
-            },
-            {
-                "shell": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
-                "label": "PowerShell"
-            },
-            {
-                "shell": "C:\\Program Files\\Git\\bin\\bash.exe",
-                "label": "Git bash"
-            }
-        ],
-    "workbench.editorAssociations": 
-        {
-            "*.ipynb": "jupyter.notebook.ipynb"
-        },
-    "[html]": 
-        {
-            "editor.defaultFormatter": "esbenp.prettier-vscode"
-        },
+    "editor.smoothScrolling": true,
+    "editor.suggestOnTriggerCharacters": false,
     "editor.suggestSelection": "first",
+    "editor.tabCompletion": "on",
+    "editor.useTabStops": false,
+    "editor.wordWrap": "on",
+    "emmet.includeLanguages": {
+        "django-html": "html"
+    },
+    "emmet.triggerExpansionOnTab": true,
+    
+    "files.defaultLanguage": "python",
+
+    "[html]": 
+    {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    
+    "[jsonc]": 
+    {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+
+    "terminal.integrated.fontSize": 16,
+    "terminal.integrated.cursorStyle": "line", 
+    
+    "vsicons.dontShowNewVersionMessage": true,
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    
+    "window.menuBarVisibility": "toggle",
+    "workbench.activityBar.visible": true,
+    "workbench.colorTheme": "GitHub Dark",
+    "workbench.editorAssociations": 
+    {
+        "*.ipynb": "jupyter.notebook.ipynb"
+    },
+    "workbench.editor.tabSizing": "shrink",
+    "workbench.iconTheme": "material-icon-theme",
     "workspace.searchEnabled": true,
-    "python.languageServer": "Microsoft",
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.statusBar.visible": true,
+
+    // -------- extensions -------- //
+
+    // front-end
+    "auto-close-tag.activationOnLanguage": [
+        "xml", "php", "blade", "ejs", "jinja", "javascript", "javascriptreact", 
+        "typescript", "typescriptreact", "plaintext", "markdown", "vue", "liquid",
+        "erb", "lang-cfml", "cfml", "HTML (EEx)", "HTML (Eex)", "plist", "django-html"
+    ],
+    "auto-close-tag.enableAutoCloseSelfClosingTag": true,
+    "auto-close-tag.enableAutoCloseTag": true,
+
+    "liveServer.settings.donotShowInfoMsg": true,
+    
+    "shellLauncher.shells.windows": 
+    [
+        {
+            "shell": "C:\\WINDOWS\\System32\\cmd.exe",
+            "label": "cmd"
+        },
+        {
+            "shell": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+            "label": "PowerShell"
+        },
+        {
+            "shell": "C:\\Program Files\\Git\\bin\\bash.exe",
+            "label": "Git bash"
+        }
+    ],
+    
+    // Python
     "python.formatting.provider": "black",
-    "python.linting.mypyEnabled": true,
+    "python.languageServer": "Microsoft",
     "python.linting.enabled": true,
     "python.linting.lintOnSave": true,
+    "python.linting.mypyEnabled": true,
     "python.terminal.activateEnvironment": true,
 
     // "Vim emulation for Visual Studio Code"
     "vim.easymotion": true,
-    "vim.useSystemClipboard": true,
-    "vim.useCtrlKeys": true,
-    "vim.hlsearch": true,
-    "vim.incsearch": true,
-    "editor.lineNumbers": "on",
     "vim.handleKeys": {
         "<C-k>": false,
         "<C-j>": false
-    }
+    },
+    "vim.hlsearch": true,
+    "vim.incsearch": true,
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
 }
