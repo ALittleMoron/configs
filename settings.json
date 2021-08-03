@@ -25,6 +25,11 @@
     "emmet.triggerExpansionOnTab": true,
     
     "files.defaultLanguage": "python",
+    "files.associations": {
+        "**/*.html": "html",
+        "**/templates/**/*.html": "django-html",
+        "**/templates/**/*": "django-txt",
+    },
 
     "[html]": 
     {
