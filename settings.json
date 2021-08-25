@@ -91,7 +91,7 @@
     
     // Python
     "python.formatting.provider": "black",
-    "python.languageServer": "Microsoft",
+    "python.languageServer": "Default",
     "python.linting.enabled": true,
     "python.linting.lintOnSave": true,
     "python.linting.mypyEnabled": true,
