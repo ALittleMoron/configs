@@ -97,7 +97,7 @@
     "python.linting.mypyEnabled": true,
     "python.terminal.activateEnvironment": true,
 
-    // "Vim emulation for Visual Studio Code"
+    // Vim emulation for Visual Studio Code
     "vim.easymotion": true,
     "vim.handleKeys": {
         "<C-k>": false,
