@@ -1,6 +1,50 @@
-" source: https://github.com/alexey-goloburdin/nvim-config
+" Источник: https://github.com/alexey-goloburdin/nvim-config
 
-set mouse=a  " enable mouse
+" ============================================================================
+" =                                   Плагины                                =
+" ============================================================================
+
+call plug#begin('~/.vim/plugged')
+
+" -----------------------------===    Основные    ===-------------------------
+Plug 'neovim/nvim-lspconfig'              " \
+Plug 'hrsh7th/nvim-cmp'                   " -\
+Plug 'hrsh7th/cmp-nvim-lsp'               " -- Lua и language server protocol
+Plug 'saadparwaiz1/cmp_luasnip'           " -/
+Plug 'L3MON4D3/LuaSnip'                   " /
+
+Plug 'scrooloose/nerdcommenter'           " Удобная постановка комментариев
+Plug 'scrooloose/nerdtree'                " Файловое дерево
+Plug 'jiangmiao/auto-pairs'               " Закрытие парных скобок и кавычек
+Plug 'tmhedberg/SimpylFold'               " Сворачивание/разворачивание кода
+Plug 'sheerun/vim-polyglot'               " Более хорошая подсветка синтаксиса
+
+
+" -----------------------------=== Цветовые схемы ===-------------------------
+Plug 'morhetz/gruvbox'                                 " ---- Сами схемы
+Plug 'mhartington/oceanic-next'                        " ---/
+Plug 'kaicataldo/material.vim', { 'branch': 'main' }   " --/
+Plug 'ayu-theme/ayu-vim'                               " -/
+Plug 'wojciechkepka/vim-github-dark'                   " /
+Plug 'vim-airline/vim-airline'                         " Нижняя панель
+Plug 'vim-airline/vim-airline-themes'                  " Темы vim-airline
+
+
+" -----------------------------===     Python     ===-------------------------
+Plug 'mitsuhiko/vim-jinja'		" поддержка языка Jinja для neovim
+
+call plug#end()
+
+" ============================================================================
+
+
+
+" ==================================================================================
+" =                                   Настройки neovim                             =
+" ==================================================================================
+" ---------------------------===           Основное          ===--------------------
+set nocompatible
+set mouse=a
 set encoding=utf-8
 set number
 set noswapfile
@@ -12,56 +56,45 @@ set shiftwidth=4
 set expandtab
 set autoindent
 set fileformat=unix
-filetype indent on      " load filetype-specific indent files
-
-inoremap jk <esc>
+filetype indent on
 
 
-call plug#begin('~/.vim/plugged')
-
-Plug 'neovim/nvim-lspconfig'
-Plug 'hrsh7th/nvim-cmp'
-Plug 'hrsh7th/cmp-nvim-lsp'
-Plug 'saadparwaiz1/cmp_luasnip'
-Plug 'L3MON4D3/LuaSnip'
-
-
-" color schemas
-Plug 'morhetz/gruvbox'  " colorscheme gruvbox
-Plug 'mhartington/oceanic-next'  " colorscheme OceanicNext
-Plug 'kaicataldo/material.vim', { 'branch': 'main' }
-Plug 'ayu-theme/ayu-vim'
-
-" For JS/JSX
-Plug 'yuezk/vim-js'
-Plug 'maxmellon/vim-jsx-pretty'
-
-call plug#end()
+" ---------------------------===  Инициализация темы neovim  ===--------------------
+set termguicolors
+let ayucolor='dark'
+let g:airline_theme='ayu_dark'
+set colorcolumn=100
+colorscheme ayu
 
 
-colorscheme OceanicNext
-" colorscheme gruvbox
-"let g:material_terminal_italics = 1
-" variants: default, palenight, ocean, lighter, darker, default-community,
-"           palenight-community, ocean-community, lighter-community,
-"           darker-community
-"let g:material_theme_style = 'darker'
-"colorscheme material
-if (has('termguicolors'))
-  set termguicolors
-endif
+" ---------------------------===          NERDTree          ===---------------------
+let NERDTreeShowHidden=1            " Отображать файлы и директории с точкой в начале 
 
-" variants: mirage, dark, dark
-"let ayucolor="mirage"
-"colorscheme ayu
+
+" ---------------------------===  Настройка горячих клавиш   ===--------------------
+nnoremap <silent> <esc><esc> :let @/=""<CR>             " Очищение подсветки поиска
+
+map <F3> :NERDTreeToggle<CR>                            " закрепить/открепить файл-дерево
+map gn :bn<cr>                                          " Следующий буфер
+map gp :bp<cr>                                          " Предыдущий буфер
+map gw :Bclose<cr>                                      " Закрыть буфер
+
+
+" ---------------------------=== Шпора по встроенным хоткеям ===--------------------
+" \\cc - закомментировать строку
+" \\cu - раскомментировать строку
+"   zo - открыть свернутый текст
+"   zO - открыть весь раздел
+"   zc - закрыть развернутый текст
+"   ZC - закрыть весь раздел
+"    K - справка о функции/классе/методе
+
+
+" ==================================================================================
 
 
 
-" turn off search highlight
-nnoremap ,<space> :nohlsearch<CR>
-
-
-
+" ---------------------------===        Что-то на Lua        ===--------------------
 lua << EOF
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
@@ -159,7 +192,7 @@ end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'pyright', 'rust_analyzer' }
+local servers = { 'pyright'}
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = on_attach,
@@ -246,8 +279,4 @@ command! -bang -complete=buffer -nargs=? Bclose call <SID>Bclose(<q-bang>, <q-ar
 nnoremap <silent> <Leader>bd :Bclose<CR>
 
 
-map gn :bn<cr>
-map gp :bp<cr>
-map gw :Bclose<cr>
 
-set colorcolumn=79
