@@ -8,9 +8,13 @@ call plug#begin('~/.vim/plugged')
 
 " -----------------------------===    Основные    ===-------------------------
 Plug 'neovim/nvim-lspconfig'              " \
-Plug 'hrsh7th/nvim-cmp'                   " -\
-Plug 'hrsh7th/cmp-nvim-lsp'               " -- Lua и language server protocol
-Plug 'saadparwaiz1/cmp_luasnip'           " -/
+Plug 'saadparwaiz1/cmp_luasnip'           " -\
+Plug 'hrsh7th/nvim-cmp'                   " --\
+Plug 'hrsh7th/cmp-nvim-lsp'               " ---\ 
+Plug 'hrsh7th/cmp-vsnip'                  " ---- Вспомогательные файлы для init.vim, Lua и LSP.
+Plug 'hrsh7th/cmp-path'                   " ---/
+Plug 'hrsh7th/cmp-buffer'                 " --/
+Plug 'hrsh7th/vim-vsnip'                  " -/
 Plug 'L3MON4D3/LuaSnip'                   " /
 
 Plug 'scrooloose/nerdcommenter'           " Удобная постановка комментариев
@@ -23,17 +27,23 @@ Plug 'tpope/vim-surround'                 " Удобное оборачиван�
 
 
 " -----------------------------=== Цветовые схемы ===-------------------------
-Plug 'morhetz/gruvbox'                                 " ---- Сами схемы
-Plug 'mhartington/oceanic-next'                        " ---/
-Plug 'kaicataldo/material.vim', { 'branch': 'main' }   " --/
-Plug 'ayu-theme/ayu-vim'                               " -/
+Plug 'morhetz/gruvbox'                                 " ----- Сами схемы
+Plug 'mhartington/oceanic-next'                        " ----/
+Plug 'kaicataldo/material.vim', { 'branch': 'main' }   " ---/
+Plug 'ayu-theme/ayu-vim'                               " --/
+Plug 'safv12/andromeda.vim'                            " -/
 Plug 'wojciechkepka/vim-github-dark'                   " /
 Plug 'vim-airline/vim-airline'                         " Нижняя панель
-Plug 'vim-airline/vim-airline-themes'                  " Темы vim-airline
+Plug 'vim-airline/vim-airline-themes'                  " Темы нижней панели
 
 
 " -----------------------------===     Python     ===-------------------------
 Plug 'mitsuhiko/vim-jinja'		" поддержка языка Jinja для neovim
+
+
+" -----------------------------===      Rust      ===-------------------------
+Plug 'simrat39/rust-tools.nvim'                        " вкл. фич rust-analyzer
+
 
 call plug#end()
 
@@ -61,6 +71,10 @@ set autoindent
 set fileformat=unix
 filetype indent on
 
+set completeopt=menuone,noinsert,noselect
+set shortmess+=c
+set updatetime=300
+autocmd CursorHold * lua vim.diagnostic.open_float(nil, {focusable = false})
 
 " ---------------------------===  Инициализация темы neovim  ===--------------------
 set termguicolors
@@ -96,6 +110,7 @@ autocmd BufWritePre *.py :%s/\s\+$//e        " удаление пробелов
 " <leader><leader>s  - прыжок к паттерну введенной буквы
 " <leader><leader>f  - прыжок к паттерну введенной буквы (вперед)
 " K                  - справка о функции/классе/методе
+" <Ctrl-y>,          - wrap в Emmet
 
 
 " ==================================================================================
@@ -159,6 +174,31 @@ cmp.setup {
 EOF
 
 
+lua <<EOF
+local nvim_lsp = require('lspconfig')
+
+local opts = {
+    tools = {
+        autoSetHints = true,
+        hover_with_action = true,
+        inlay_hints = {
+            show_parameter_hints = false,
+            parameter_hints_prefix = "",
+            other_hints_prefix = "",
+        },
+    },
+
+    server = {
+        settings = {
+            ["rust-analyzer"] = {
+                checkOnSave = {command = "clippy"},
+            }
+        }
+    },
+}
+
+require('rust-tools').setup(opts)
+EOF
 
 
 lua << EOF
