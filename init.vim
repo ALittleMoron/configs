@@ -18,12 +18,14 @@ Plug 'hrsh7th/vim-vsnip'                  " -/
 Plug 'L3MON4D3/LuaSnip'                   " /
 
 Plug 'scrooloose/nerdcommenter'           " Удобная постановка комментариев
-Plug 'scrooloose/nerdtree'                " Файловое дерево
 Plug 'jiangmiao/auto-pairs'               " Закрытие парных скобок и кавычек
 Plug 'sheerun/vim-polyglot'               " Более хорошая подсветка синтаксиса
 Plug 'easymotion/vim-easymotion'          " Более простые прыжки к кускам кода
 Plug 'mattn/emmet-vim'                    " Emmet для vim
 Plug 'tpope/vim-surround'                 " Удобное оборачивание текста (Emmet для остального кода)
+Plug 'kyazdani42/nvim-tree.lua'           " Файловое дерево
+Plug 'kyazdani42/nvim-web-devicons'       " Фикс инокок вместо вопросиков
+Plug 'romgrk/barbar.nvim'                 " Панель вкладок для neovim
 
 
 " -----------------------------=== Цветовые схемы ===-------------------------
@@ -83,19 +85,32 @@ let g:airline_theme='ayu_dark'
 set colorcolumn=100
 colorscheme ayu
 
+" ---------------------------===  Настройка горячих клавиш   ===--------------------
+nnoremap <silent> <esc><esc> :let @/=""<CR>                  " Очищение подсветки поиска
 
-" ---------------------------===           NERDTree          ===-------------------
-let NERDTreeShowHidden=1            " Отображать файлы и директории с точкой в начале 
+nnoremap <silent> <F3> :NvimTreeToggle<CR>                   " Закрепить/открепить файл-дерево
+nnoremap <silent> <leader><leader>r :NvimTreeRefresh<CR>     " Обновить файловое дерево
 
+" <A-something> = Alt + somethin
+nnoremap <silent> <A-,> :bn<CR>                              " Следующий буфер
+nnoremap <silent> <A-.> :bp<CR>                              " Предыдущий буфер
 
-" ---------------------- ----===  Настройка горячих клавиш   ===-------------------
-nnoremap <silent> <esc><esc> :let @/=""<CR>             " Очищение подсветки поиска
+nnoremap <silent> <A-1> :BufferGoto 1<CR>                    " \
+nnoremap <silent> <A-2> :BufferGoto 2<CR>                    " -\
+nnoremap <silent> <A-3> :BufferGoto 3<CR>                    " --\
+nnoremap <silent> <A-4> :BufferGoto 4<CR>                    " ---\
+nnoremap <silent> <A-5> :BufferGoto 5<CR>                    " ---- Переход к n буферу (n=1...9)
+nnoremap <silent> <A-6> :BufferGoto 6<CR>                    " ---/
+nnoremap <silent> <A-7> :BufferGoto 7<CR>                    " --/
+nnoremap <silent> <A-8> :BufferGoto 8<CR>                    " -/
+nnoremap <silent> <A-9> :BufferGoto 9<CR>                    " /
 
-map <F3> :NERDTreeToggle<CR>                            " закрепить/открепить файл-дерево
-map gn :bn<cr>                                          " Следующий буфер
-map gp :bp<cr>                                          " Предыдущий буфер
-map gw :Bclose<cr>                                      " Закрыть буфер
+nnoremap <silent> <A-<> :BufferMovePrevious<CR>              " Переместить буфер назад (Alt + <)
+nnoremap <silent> <A->> :BufferMoveNext<CR>                  " Переместить буфер вперед (Alt + >)
 
+nnoremap <silent> <leader>p :BufferPin<CR>                   " Закрепить / открепить буфер
+
+nnoremap <silent> <A-c> :BufferClose<CR>                     " Закрыть буфер
 
 " ---------------------------===   Автоматические команды    ===--------------------
 autocmd BufWritePre *.py :%s/\s\+$//e        " удаление пробелов в конце строки
@@ -103,8 +118,6 @@ autocmd BufWritePre *.py :%s/\s\+$//e        " удаление пробелов
 
 
 " ---------------------------=== Шпора по встроенным хоткеям ===--------------------
-" <leader><leader>cc - закомментировать строку
-" <leader><leader>cu - раскомментировать строку
 " <leader><leader>w  - прыжок вперед по паттернам
 " <leader><leader>b  - прыжок назад по паттернам
 " <leader><leader>s  - прыжок к паттерну введенной буквы
@@ -118,6 +131,10 @@ autocmd BufWritePre *.py :%s/\s\+$//e        " удаление пробелов
 
 
 " ---------------------------===        Что-то на Lua        ===--------------------
+lua << EOF
+require'nvim-tree'.setup()
+EOF
+
 lua << EOF
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
@@ -172,7 +189,6 @@ cmp.setup {
   },
 }
 EOF
-
 
 lua <<EOF
 local nvim_lsp = require('lspconfig')
@@ -240,7 +256,7 @@ end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'pyright'}
+local servers = { 'pyright'} 
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = on_attach,
