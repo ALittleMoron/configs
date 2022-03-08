@@ -98,6 +98,9 @@ colorscheme ayu
 " ---------------------------===  Настройка горячих клавиш   ===--------------------
 nnoremap <silent> <esc><esc> :let @/=""<CR>                       " Очищение подсветки поиска
 
+nnoremap <silent> <leader><leader>j :terminal<CR>                 " терминал
+tnoremap <silent> <Esc> <C-\><C-n>                                " выйти в Normal mode терминала
+
 nnoremap <silent> <leader><leader>g :SignifyToggle<CR>            " вкл/выкл git изменения
 nnoremap <silent> <leader><leader>h :SignifyToggleHighlight<CR>   " вкл/выкл подсветку строк git
 
@@ -116,6 +119,7 @@ nnoremap <silent> <A-6> :BufferGoto 6<CR>                         " ---/
 nnoremap <silent> <A-7> :BufferGoto 7<CR>                         " --/
 nnoremap <silent> <A-8> :BufferGoto 8<CR>                         " -/
 nnoremap <silent> <A-9> :BufferGoto 9<CR>                         " /
+nnoremap <silent> <A-0> :BufferLast<CR>                           " Последний буфер
 
 nnoremap <silent> <A-<> :BufferMovePrevious<CR>                   " Переместить буфер назад
 nnoremap <silent> <A->> :BufferMoveNext<CR>                       " Переместить буфер вперед
