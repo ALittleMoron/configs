@@ -1,5 +1,12 @@
 " Источник: https://github.com/alexey-goloburdin/nvim-config
-
+"           
+"           я   первоисточник,   конечно,   очень   серьезно
+"           переработал, что в пору говорить уже про корабль
+"           Тесея, но все равно укажу, от чего я оттлакивал-
+"           ся. Можете свободно копировать все мои  конфиги,
+"           учитывая, что некоторые из них далеко не мои. Но
+"           ссылки  на  оригиналы   я   оставил   во   всех.
+"
 " ============================================================================
 " =                                   Плагины                                =
 " ============================================================================
@@ -38,6 +45,9 @@ Plug 'wojciechkepka/vim-github-dark'                   " /
 Plug 'vim-airline/vim-airline'                         " Нижняя панель
 Plug 'vim-airline/vim-airline-themes'                  " Темы нижней панели
 
+" -----------------------------===      Git       ===-------------------------
+Plug 'mhinz/vim-signify'        " Core-плагин для поддержки Git
+Plug 'tpope/vim-fugitive'       " Git команды для vim/neovim
 
 " -----------------------------===     Python     ===-------------------------
 Plug 'mitsuhiko/vim-jinja'		" поддержка языка Jinja для neovim
@@ -86,31 +96,33 @@ set colorcolumn=100
 colorscheme ayu
 
 " ---------------------------===  Настройка горячих клавиш   ===--------------------
-nnoremap <silent> <esc><esc> :let @/=""<CR>                  " Очищение подсветки поиска
+nnoremap <silent> <esc><esc> :let @/=""<CR>                       " Очищение подсветки поиска
 
-nnoremap <silent> <F3> :NvimTreeToggle<CR>                   " Закрепить/открепить файл-дерево
-nnoremap <silent> <leader><leader>r :NvimTreeRefresh<CR>     " Обновить файловое дерево
+nnoremap <silent> <leader><leader>g :SignifyToggle<CR>            " вкл/выкл git изменения
+nnoremap <silent> <leader><leader>h :SignifyToggleHighlight<CR>   " вкл/выкл подсветку строк git
 
-" <A-something> = Alt + somethin
-nnoremap <silent> <A-,> :bn<CR>                              " Следующий буфер
-nnoremap <silent> <A-.> :bp<CR>                              " Предыдущий буфер
+nnoremap <silent> <F3> :NvimTreeToggle<CR>                        " Закрепить/открепить дерево
+nnoremap <silent> <leader><leader>r :NvimTreeRefresh<CR>          " Обновить файловое дерево
 
-nnoremap <silent> <A-1> :BufferGoto 1<CR>                    " \
-nnoremap <silent> <A-2> :BufferGoto 2<CR>                    " -\
-nnoremap <silent> <A-3> :BufferGoto 3<CR>                    " --\
-nnoremap <silent> <A-4> :BufferGoto 4<CR>                    " ---\
-nnoremap <silent> <A-5> :BufferGoto 5<CR>                    " ---- Переход к n буферу (n=1...9)
-nnoremap <silent> <A-6> :BufferGoto 6<CR>                    " ---/
-nnoremap <silent> <A-7> :BufferGoto 7<CR>                    " --/
-nnoremap <silent> <A-8> :BufferGoto 8<CR>                    " -/
-nnoremap <silent> <A-9> :BufferGoto 9<CR>                    " /
+nnoremap <silent> <A-,> :bn<CR>                                   " Следующий буфер
+nnoremap <silent> <A-.> :bp<CR>                                   " Предыдущий буфер
 
-nnoremap <silent> <A-<> :BufferMovePrevious<CR>              " Переместить буфер назад (Alt + <)
-nnoremap <silent> <A->> :BufferMoveNext<CR>                  " Переместить буфер вперед (Alt + >)
+nnoremap <silent> <A-1> :BufferGoto 1<CR>                         " \
+nnoremap <silent> <A-2> :BufferGoto 2<CR>                         " -\
+nnoremap <silent> <A-3> :BufferGoto 3<CR>                         " --\
+nnoremap <silent> <A-4> :BufferGoto 4<CR>                         " ---\
+nnoremap <silent> <A-5> :BufferGoto 5<CR>                         " ---- Переход к n буферу
+nnoremap <silent> <A-6> :BufferGoto 6<CR>                         " ---/
+nnoremap <silent> <A-7> :BufferGoto 7<CR>                         " --/
+nnoremap <silent> <A-8> :BufferGoto 8<CR>                         " -/
+nnoremap <silent> <A-9> :BufferGoto 9<CR>                         " /
 
-nnoremap <silent> <leader>p :BufferPin<CR>                   " Закрепить / открепить буфер
+nnoremap <silent> <A-<> :BufferMovePrevious<CR>                   " Переместить буфер назад
+nnoremap <silent> <A->> :BufferMoveNext<CR>                       " Переместить буфер вперед
 
-nnoremap <silent> <A-c> :BufferClose<CR>                     " Закрыть буфер
+nnoremap <silent> <leader>p :BufferPin<CR>                        " Закрепить / открепить буфер
+
+nnoremap <silent> <A-c> :BufferClose<CR>                          " Закрыть буфер
 
 " ---------------------------===   Автоматические команды    ===--------------------
 autocmd BufWritePre *.py :%s/\s\+$//e        " удаление пробелов в конце строки
@@ -124,6 +136,7 @@ autocmd BufWritePre *.py :%s/\s\+$//e        " удаление пробелов
 " <leader><leader>f  - прыжок к паттерну введенной буквы (вперед)
 " K                  - справка о функции/классе/методе
 " <Ctrl-y>,          - wrap в Emmet
+" <A-p>              - вкл/выкл. постановку парных кавычек/скобок и т.д.
 
 
 " ==================================================================================
@@ -136,13 +149,10 @@ require'nvim-tree'.setup()
 EOF
 
 lua << EOF
--- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
 
--- luasnip setup
 local luasnip = require 'luasnip'
 
--- nvim-cmp setup
 local cmp = require 'cmp'
 cmp.setup {
   completion = {
@@ -220,20 +230,15 @@ EOF
 lua << EOF
 local nvim_lsp = require('lspconfig')
 
--- Use an on_attach function to only map the following keys
--- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
 
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
-  -- Enable completion triggered by <c-x><c-o>
   buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 
-  -- Mappings.
   local opts = { noremap=true, silent=true }
 
-  -- See `:help vim.lsp.*` for documentation on any of the below functions
   buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
   buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
   buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
@@ -254,8 +259,6 @@ local on_attach = function(client, bufnr)
 
 end
 
--- Use a loop to conveniently call 'setup' on multiple servers and
--- map buffer local keybindings when the language server attaches
 local servers = { 'pyright'} 
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
@@ -269,8 +272,6 @@ EOF
 
 
 
-" Delete buffer while keeping window layout (don't close buffer's windows).
-" Version 2008-11-18 from http://vim.wikia.com/wiki/VimTip165
 if v:version < 700 || exists('loaded_bclose') || &cp
   finish
 endif
@@ -279,18 +280,12 @@ if !exists('bclose_multiple')
   let bclose_multiple = 1
 endif
 
-" Display an error message.
 function! s:Warn(msg)
   echohl ErrorMsg
   echomsg a:msg
   echohl NONE
 endfunction
 
-" Command ':Bclose' executes ':bd' to delete buffer in current window.
-" The window will show the alternate buffer (Ctrl-^) if it exists,
-" or the previous buffer (:bp), or a blank buffer if no previous.
-" Command ':Bclose!' is the same, but executes ':bd!' (discard changes).
-" An optional argument can specify which buffer to close (name or number).
 function! s:Bclose(bang, buffer)
   if empty(a:buffer)
     let btarget = bufnr('%')
@@ -307,7 +302,6 @@ function! s:Bclose(bang, buffer)
     call s:Warn('No write since last change for buffer '.btarget.' (use :Bclose!)')
     return
   endif
-  " Numbers of windows that view target buffer which we will delete.
   let wnums = filter(range(1, winnr('$')), 'winbufnr(v:val) == btarget')
   if !g:bclose_multiple && len(wnums) > 1
     call s:Warn('Buffer is in multiple windows (use ":let bclose_multiple=1")')
@@ -323,11 +317,8 @@ function! s:Bclose(bang, buffer)
       bprevious
     endif
     if btarget == bufnr('%')
-      " Numbers of listed buffers which are not the target to be deleted.
       let blisted = filter(range(1, bufnr('$')), 'buflisted(v:val) && v:val != btarget')
-      " Listed, not target, and not displayed.
       let bhidden = filter(copy(blisted), 'bufwinnr(v:val) < 0')
-      " Take the first buffer, if any (could be more intelligent).
       let bjump = (bhidden + blisted + [-1])[0]
       if bjump > 0
         execute 'buffer '.bjump
@@ -341,6 +332,4 @@ function! s:Bclose(bang, buffer)
 endfunction
 command! -bang -complete=buffer -nargs=? Bclose call <SID>Bclose(<q-bang>, <q-args>)
 nnoremap <silent> <Leader>bd :Bclose<CR>
-
-
 
