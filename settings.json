@@ -23,6 +23,7 @@
         "django-html": "html"
     },
     "emmet.triggerExpansionOnTab": true,
+    "explorer.confirmDragAndDrop": false,
     
     "files.defaultLanguage": "python",
     "files.associations": {
@@ -103,8 +104,10 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     
+    "notebook.lineNumbers": "on",
+    
     "security.workspace.trust.untrustedFiles": "open",
-
+    
     "terminal.integrated.fontSize": 16,
     "terminal.integrated.cursorStyle": "line", 
     
@@ -113,10 +116,11 @@
     
     "window.menuBarVisibility": "toggle",
     "workbench.activityBar.visible": true,
-    "workbench.colorTheme": "GitHub Dark",
+    "workbench.colorTheme": "Andromeda Bordered",
     "workbench.editorAssociations": 
     {
-        "*.ipynb": "jupyter-notebook"
+        "*.ipynb": "jupyter-notebook",
+        "*.txt": "default"
     },
     "workbench.editor.tabSizing": "shrink",
     "workbench.iconTheme": "material-icon-theme",
@@ -161,6 +165,9 @@
     "python.linting.lintOnSave": true,
     "python.linting.mypyEnabled": true,
     "python.terminal.activateEnvironment": true,
+
+    // Rust
+   "rust-analyzer.inlayHints.typeHints": false, 
 
     // "Vim emulation for Visual Studio Code"
     "vim.easymotion": true,
