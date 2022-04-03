@@ -127,6 +127,8 @@ nnoremap <silent> <A->> :BufferMoveNext<CR>                       " Переме
 nnoremap <silent> <leader>p :BufferPin<CR>                        " Закрепить / открепить буфер
 
 nnoremap <silent> <A-c> :BufferClose<CR>                          " Закрыть буфер
+nnoremap <silent> <leader><leader>k :bd!<CR>                      " Принудительное закрытие буфура
+
 
 " ---------------------------===   Автоматические команды    ===--------------------
 autocmd BufWritePre *.py :%s/\s\+$//e        " удаление пробелов в конце строки
