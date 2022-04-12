@@ -129,8 +129,9 @@ nnoremap <silent> <leader>p :BufferPin<CR>                        " Закреп
 nnoremap <silent> <A-c> :BufferClose<CR>                          " Закрыть буфер
 nnoremap <silent> <leader><leader>k :bd!<CR>                      " Принудительное закрытие буфура
 
+nnoremap <silent> <F5> :! python3 % <CR>                          " запуск текущего python-файла
 
-" ---------------------------===   Автоматические команды    ===--------------------
+"---------------------------===   Автоматические команды    ===--------------------
 autocmd BufWritePre *.py :%s/\s\+$//e        " удаление пробелов в конце строки
 
 
