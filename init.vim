@@ -1,156 +1,189 @@
-" Источник: https://github.com/alexey-goloburdin/nvim-config
-"           
-"           я   первоисточник,   конечно,   очень   серьезно
-"           переработал, что в пору говорить уже про корабль
-"           Тесея, но все равно укажу, от чего я оттлакивал-
-"           ся. Можете свободно копировать все мои  конфиги,
-"           учитывая, что некоторые из них далеко не мои. Но
-"           ссылки  на  оригиналы   я   оставил   во   всех.
+"                       Источник: https://github.com/alexey-goloburdin/nvim-config
 "
-" ============================================================================
-" =                                   Плагины                                =
-" ============================================================================
-
+"                         ------------------------------------------------------
+"                         |  я   первоисточник,   конечно,   очень   серьезно  |
+"                         |  переработал, что в пору говорить уже про корабль  |
+"                         |  Тесея, но все равно укажу, от чего я оттлакивал-  |
+"                         |  ся. Можете свободно копировать все мои  конфиги,  |
+"                         |  учитывая, что некоторые из них далеко не мои. Но  |
+"                         |  ссылки  на  оригиналы   я   оставил   во   всех.  |
+"                         ------------------------------------------------------
+"
 call plug#begin('~/.vim/plugged')
+"
+" =================================================================================================
+"                                                Плагины                                          |
+" =================================================================================================
+"                                                                                                 |
+"                                                                                                 |
+" ----------------------------------------===    Основные    ===-----------------------------------
+"                                                                                                 |
+Plug 'neovim/nvim-lspconfig'              " \                                                     | 
+Plug 'saadparwaiz1/cmp_luasnip'           " -\                                                    |
+Plug 'hrsh7th/nvim-cmp'                   " --\                                                   |
+Plug 'hrsh7th/cmp-nvim-lsp'               " ---\                                                  |
+Plug 'hrsh7th/cmp-vsnip'                  " ---- Вспомогательные файлы для init.vim, Lua и LSP.   |
+Plug 'hrsh7th/cmp-path'                   " ---/                                                  |
+Plug 'hrsh7th/cmp-buffer'                 " --/                                                   |
+Plug 'hrsh7th/vim-vsnip'                  " -/                                                    |
+Plug 'L3MON4D3/LuaSnip'                   " /                                                     |
+"                                                                                                 |     
+Plug 'scrooloose/nerdcommenter'           " Удобная постановка комментариев                       |
+Plug 'jiangmiao/auto-pairs'               " Закрытие парных скобок и кавычек                      |
+Plug 'sheerun/vim-polyglot'               " Более хорошая подсветка синтаксиса                    |
+Plug 'easymotion/vim-easymotion'          " Более простые прыжки к кускам кода                    |
+Plug 'mattn/emmet-vim'                    " Emmet для vim                                         |
+Plug 'tpope/vim-surround'                 " Удобное оборачивание текста (Emmet для остального)    |
+Plug 'kyazdani42/nvim-tree.lua'           " Файловое дерево                                       |
+Plug 'kyazdani42/nvim-web-devicons'       " Фикс инокок вместо вопросиков                         |
+Plug 'romgrk/barbar.nvim'                 " Панель вкладок для neovim                             |
+"                                                                                                 |
+" ----------------------------------------=== Цветовые схемы ===-----------------------------------
+"                                                                                                 |
+Plug 'mhartington/oceanic-next'           " \                                                     |
+Plug 'ayu-theme/ayu-vim'                  " - Цветовые схемы                                      |
+Plug 'wojciechkepka/vim-github-dark'      " /                                                     |
+"                                                                                                 |
+Plug 'vim-airline/vim-airline'            " Нижняя панель                                         |
+Plug 'vim-airline/vim-airline-themes'     " Темы нижней панели                                    |
+"                                                                                                 |
+" ----------------------------------------===      Git       ===-----------------------------------
+"                                                                                                 |
+Plug 'mhinz/vim-signify'                  " Core-плагин для поддержки Git                         |
+Plug 'tpope/vim-fugitive'                 " Git команды для vim/neovim                            |
+"                                                                                                 |
+" ----------------------------------------===     Python     ===-----------------------------------
+"                                                                                                 |
+Plug 'mitsuhiko/vim-jinja'		          " Поддержка языка Jinja для neovim                      |
+"                                                                                                 |
+" ----------------------------------------===      Rust      ===----------------------------------|
+"                                                                                                 |
+Plug 'simrat39/rust-tools.nvim'           " Вкл. фич rust-analyzer                                |
+"                                                                                                 |
+" =================================================================================================
 
-" -----------------------------===    Основные    ===-------------------------
-Plug 'neovim/nvim-lspconfig'              " \
-Plug 'saadparwaiz1/cmp_luasnip'           " -\
-Plug 'hrsh7th/nvim-cmp'                   " --\
-Plug 'hrsh7th/cmp-nvim-lsp'               " ---\ 
-Plug 'hrsh7th/cmp-vsnip'                  " ---- Вспомогательные файлы для init.vim, Lua и LSP.
-Plug 'hrsh7th/cmp-path'                   " ---/
-Plug 'hrsh7th/cmp-buffer'                 " --/
-Plug 'hrsh7th/vim-vsnip'                  " -/
-Plug 'L3MON4D3/LuaSnip'                   " /
-
-Plug 'scrooloose/nerdcommenter'           " Удобная постановка комментариев
-Plug 'jiangmiao/auto-pairs'               " Закрытие парных скобок и кавычек
-Plug 'sheerun/vim-polyglot'               " Более хорошая подсветка синтаксиса
-Plug 'easymotion/vim-easymotion'          " Более простые прыжки к кускам кода
-Plug 'mattn/emmet-vim'                    " Emmet для vim
-Plug 'tpope/vim-surround'                 " Удобное оборачивание текста (Emmet для остального кода)
-Plug 'kyazdani42/nvim-tree.lua'           " Файловое дерево
-Plug 'kyazdani42/nvim-web-devicons'       " Фикс инокок вместо вопросиков
-Plug 'romgrk/barbar.nvim'                 " Панель вкладок для neovim
+call plug#end()                                        
 
 
-" -----------------------------=== Цветовые схемы ===-------------------------
-Plug 'morhetz/gruvbox'                                 " ----- Сами схемы
-Plug 'mhartington/oceanic-next'                        " ----/
-Plug 'kaicataldo/material.vim', { 'branch': 'main' }   " ---/
-Plug 'ayu-theme/ayu-vim'                               " --/
-Plug 'safv12/andromeda.vim'                            " -/
-Plug 'wojciechkepka/vim-github-dark'                   " /
-Plug 'vim-airline/vim-airline'                         " Нижняя панель
-Plug 'vim-airline/vim-airline-themes'                  " Темы нижней панели
+" =================================================================================================
+" =                                           Настройки neovim                                    =
+" =================================================================================================
+"                                                                                                 |
+"                                                                                                 |
+" ----------------------------------===           Основное           ===---------------------------
+"
+set nocompatible                              " Что-то полезное
+set mouse=a                                   " Расширенный режим для мыши
+set encoding=utf-8                            " Основная кодировка по умолчаюнию - utf-8
+set number                                    " Нумерация строк
+set noswapfile                                " Отключить swap-файлы для neovim
+set scrolloff=7                               " Расстояние сверху и снизу при скроле для курсора
+"
+set clipboard+=unnamedplus                    " Тип буфера обмена
+set tabstop=4                                 " Число пробелов в Tab'е
+set softtabstop=4                             " Почти то же, что и tabstop
+set shiftwidth=4                              " Сдвиг = Tab, но для плагинов
+set expandtab                                 " Замена Tab'а на пробелы
+set autoindent                                " Сохранение отступа строки при переходе на новую
+set fileformat=unix                           " Формат файла (neovim использую всегда на linux)
+filetype indent on                            " Вкл. идентификация редактируемого в nvim файла
+"
+set completeopt=menuone,noinsert,noselect     " Сценарии, когда выпадающее меню может появиться
+set shortmess+=c                              " Предотвр. показ доп сообщений при comlete 
+set updatetime=300                            " Время обновления состояния файла и CursorHold 
+"
+" ----------------------------------===  Инициализация темы neovim   ===---------------------------
 
-" -----------------------------===      Git       ===-------------------------
-Plug 'mhinz/vim-signify'        " Core-плагин для поддержки Git
-Plug 'tpope/vim-fugitive'       " Git команды для vim/neovim
+set termguicolors                             " Вкл. 24-битный режим цветов
+colorscheme ayu                               " Цветовая схема
+let ayucolor='dark'                           " Тип цветовой схемы ayu (dark)
+let g:airline_theme='ayu_dark'                " Тема для нижней панели neovim
+set colorcolumn=100                           " Рулетка, показывающая рекомендуемую длину строки
 
-" -----------------------------===     Python     ===-------------------------
-Plug 'mitsuhiko/vim-jinja'		" поддержка языка Jinja для neovim
+" ----------------------------------===  Настройка горячих клавиш    ===---------------------------
 
+" Использование базовых команд с русской раскладкой
+nmap о j
+nmap л k
+nmap р h
+nmap д l
+nmap ш i
+nmap ф a
 
-" -----------------------------===      Rust      ===-------------------------
-Plug 'simrat39/rust-tools.nvim'                        " вкл. фич rust-analyzer
+" Очищение подсветки поиска
+nnoremap <silent> <esc><esc> :let @/=""<CR>
 
+" Терминал 
+nnoremap <silent> <leader><leader>j :terminal<CR>
+" Выйти в Normal mode терминала
+tnoremap <silent> <Esc> <C-\><C-n>
 
-call plug#end()
+" Вкл/выкл git изменения
+nnoremap <silent> <leader><leader>g :SignifyToggle<CR>
+" Вкл/выкл подсветку строк git
+nnoremap <silent> <leader><leader>h :SignifyToggleHighlight<CR>
 
-" ============================================================================
+" Закрепить/открепить дерево
+nnoremap <silent> <F2> :NvimTreeToggle<CR>
+" Обновить файловое дерево
+nnoremap <silent> <leader><leader>r :NvimTreeRefresh<CR>
 
+" Следующий буфер
+nnoremap <silent> <A-,> :bn<CR>
+" Предыдущий буфер
+nnoremap <silent> <A-.> :bp<CR>
 
+" Переход к n буферу
+nnoremap <silent> <A-1> :BufferGoto 1<CR>
+nnoremap <silent> <A-2> :BufferGoto 2<CR>
+nnoremap <silent> <A-3> :BufferGoto 3<CR>
+nnoremap <silent> <A-4> :BufferGoto 4<CR>
+nnoremap <silent> <A-5> :BufferGoto 5<CR>
+nnoremap <silent> <A-6> :BufferGoto 6<CR>
+nnoremap <silent> <A-7> :BufferGoto 7<CR>
+nnoremap <silent> <A-8> :BufferGoto 8<CR>
+nnoremap <silent> <A-9> :BufferGoto 9<CR>
+" Последний буфер
+nnoremap <silent> <A-0> :BufferLast<CR>
 
-" ==================================================================================
-" =                                   Настройки neovim                             =
-" ==================================================================================
-" ---------------------------===           Основное          ===--------------------
-set nocompatible
-set mouse=a
-set encoding=utf-8
-set number
-set noswapfile
-set scrolloff=7
+" Переместить буфер назад
+nnoremap <silent> <A-<> :BufferMovePrevious<CR>
+" Переместить буфер вперед
+nnoremap <silent> <A->> :BufferMoveNext<CR>
 
-set clipboard=unnamed
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-set expandtab
-set autoindent
-set fileformat=unix
-filetype indent on
+" Закрепить / открепить буфер
+nnoremap <silent> <leader>p :BufferPin<CR>
 
-set completeopt=menuone,noinsert,noselect
-set shortmess+=c
-set updatetime=300
+" Закрыть буфер
+nnoremap <silent> <A-c> :BufferClose<CR>
+" Принудительное закрытие буфура
+nnoremap <silent> <leader><leader>k :bd!<CR>
+
+" Запуск текущего python-файла
+nnoremap <silent> <F3> :! python3 % <CR>
+
+"-----------------------------------===   Автоматические команды    ===----------------------------
+
+" показывает ошибки/предупреждения развернуто спустя какое-то время
 autocmd CursorHold * lua vim.diagnostic.open_float(nil, {focusable = false})
+" удаление пробелов в конце строки
+autocmd BufWritePre *.py :%s/\s\+$//e
 
-" ---------------------------===  Инициализация темы neovim  ===--------------------
-set termguicolors
-let ayucolor='dark'
-let g:airline_theme='ayu_dark'
-set colorcolumn=100
-colorscheme ayu
+" ----------------------------------=== Шпора по встроенным хоткеям ===----------------------------
 
-" ---------------------------===  Настройка горячих клавиш   ===--------------------
-nnoremap <silent> <esc><esc> :let @/=""<CR>                       " Очищение подсветки поиска
+" <leader><leader>w   -   прыжок вперед по паттернам
+" <leader><leader>b   -   прыжок назад по паттернам
+" <leader><leader>s   -   прыжок к паттерну введенной буквы
+" <leader><leader>f   -   прыжок к паттерну введенной буквы (вперед)
+" K                   -   справка о функции/классе/методе
+" <Ctrl-y>,           -   wrap в Emmet
+" <A-p>               -   вкл/выкл. постановку парных кавычек/скобок и т.д.
 
-nnoremap <silent> <leader><leader>j :terminal<CR>                 " терминал
-tnoremap <silent> <Esc> <C-\><C-n>                                " выйти в Normal mode терминала
-
-nnoremap <silent> <leader><leader>g :SignifyToggle<CR>            " вкл/выкл git изменения
-nnoremap <silent> <leader><leader>h :SignifyToggleHighlight<CR>   " вкл/выкл подсветку строк git
-
-nnoremap <silent> <F3> :NvimTreeToggle<CR>                        " Закрепить/открепить дерево
-nnoremap <silent> <leader><leader>r :NvimTreeRefresh<CR>          " Обновить файловое дерево
-
-nnoremap <silent> <A-,> :bn<CR>                                   " Следующий буфер
-nnoremap <silent> <A-.> :bp<CR>                                   " Предыдущий буфер
-
-nnoremap <silent> <A-1> :BufferGoto 1<CR>                         " \
-nnoremap <silent> <A-2> :BufferGoto 2<CR>                         " -\
-nnoremap <silent> <A-3> :BufferGoto 3<CR>                         " --\
-nnoremap <silent> <A-4> :BufferGoto 4<CR>                         " ---\
-nnoremap <silent> <A-5> :BufferGoto 5<CR>                         " ---- Переход к n буферу
-nnoremap <silent> <A-6> :BufferGoto 6<CR>                         " ---/
-nnoremap <silent> <A-7> :BufferGoto 7<CR>                         " --/
-nnoremap <silent> <A-8> :BufferGoto 8<CR>                         " -/
-nnoremap <silent> <A-9> :BufferGoto 9<CR>                         " /
-nnoremap <silent> <A-0> :BufferLast<CR>                           " Последний буфер
-
-nnoremap <silent> <A-<> :BufferMovePrevious<CR>                   " Переместить буфер назад
-nnoremap <silent> <A->> :BufferMoveNext<CR>                       " Переместить буфер вперед
-
-nnoremap <silent> <leader>p :BufferPin<CR>                        " Закрепить / открепить буфер
-
-nnoremap <silent> <A-c> :BufferClose<CR>                          " Закрыть буфер
-nnoremap <silent> <leader><leader>k :bd!<CR>                      " Принудительное закрытие буфура
-
-nnoremap <silent> <F5> :! python3 % <CR>                          " запуск текущего python-файла
-
-"---------------------------===   Автоматические команды    ===--------------------
-autocmd BufWritePre *.py :%s/\s\+$//e        " удаление пробелов в конце строки
+" =================================================================================================
 
 
 
-" ---------------------------=== Шпора по встроенным хоткеям ===--------------------
-" <leader><leader>w  - прыжок вперед по паттернам
-" <leader><leader>b  - прыжок назад по паттернам
-" <leader><leader>s  - прыжок к паттерну введенной буквы
-" <leader><leader>f  - прыжок к паттерну введенной буквы (вперед)
-" K                  - справка о функции/классе/методе
-" <Ctrl-y>,          - wrap в Emmet
-" <A-p>              - вкл/выкл. постановку парных кавычек/скобок и т.д.
-
-
-" ==================================================================================
-
-
-
-" ---------------------------===        Что-то на Lua        ===--------------------
+" ----------------------------------===        Что-то на Lua        ===----------------------------
 lua << EOF
 require'nvim-tree'.setup()
 EOF
