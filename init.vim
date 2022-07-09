@@ -1,107 +1,112 @@
 "                       Источник: https://github.com/alexey-goloburdin/nvim-config
 "
-"                         ------------------------------------------------------
-"                         |  я   первоисточник,   конечно,   очень   серьезно  |
-"                         |  переработал, что в пору говорить уже про корабль  |
-"                         |  Тесея, но все равно укажу, от чего я оттлакивал-  |
-"                         |  ся. Можете свободно копировать все мои  конфиги,  |
-"                         |  учитывая, что некоторые из них далеко не мои. Но  |
-"                         |  ссылки  на  оригиналы   я   оставил   во   всех.  |
-"                         ------------------------------------------------------
+"                         ┌────────────────────────────────────────────────────┐
+"                         │  Я   первоисточник,   конечно,   очень   серьезно  │
+"                         │  переработал,  что впору говорить уже про корабль  │
+"                         │  Тесея, но все равно укажу, от чего я отталкивал-  │
+"                         │  ся. Можете свободно копировать все мои  конфиги,  │
+"                         │  учитывая, что некоторые из них далеко не мои. Но  │
+"                         │  ссылки  на  оригиналы   я   оставил   во   всех.  │
+"                         └────────────────────────────────────────────────────┘
 "
 call plug#begin('~/.vim/plugged')
 "
-" =================================================================================================
-"                                                Плагины                                          |
-" =================================================================================================
-"                                                                                                 |
-"                                                                                                 |
-" ----------------------------------------===    Основные    ===-----------------------------------
-"                                                                                                 |
-Plug 'neovim/nvim-lspconfig'              " \                                                     | 
-Plug 'saadparwaiz1/cmp_luasnip'           " -\                                                    |
-Plug 'hrsh7th/nvim-cmp'                   " --\                                                   |
-Plug 'hrsh7th/cmp-nvim-lsp'               " ---\                                                  |
-Plug 'hrsh7th/cmp-vsnip'                  " ---- Вспомогательные файлы для init.vim, Lua и LSP.   |
-Plug 'hrsh7th/cmp-path'                   " ---/                                                  |
-Plug 'hrsh7th/cmp-buffer'                 " --/                                                   |
-Plug 'hrsh7th/vim-vsnip'                  " -/                                                    |
-Plug 'L3MON4D3/LuaSnip'                   " /                                                     |
-"                                                                                                 |     
-Plug 'scrooloose/nerdcommenter'           " Удобная постановка комментариев                       |
-Plug 'jiangmiao/auto-pairs'               " Закрытие парных скобок и кавычек                      |
-Plug 'sheerun/vim-polyglot'               " Более хорошая подсветка синтаксиса                    |
-Plug 'easymotion/vim-easymotion'          " Более простые прыжки к кускам кода                    |
-Plug 'mattn/emmet-vim'                    " Emmet для vim                                         |
-Plug 'tpope/vim-surround'                 " Удобное оборачивание текста (Emmet для остального)    |
-Plug 'kyazdani42/nvim-tree.lua'           " Файловое дерево                                       |
-Plug 'kyazdani42/nvim-web-devicons'       " Фикс инокок вместо вопросиков                         |
-Plug 'romgrk/barbar.nvim'                 " Панель вкладок для neovim                             |
-"                                                                                                 |
-" ----------------------------------------=== Цветовые схемы ===-----------------------------------
-"                                                                                                 |
-Plug 'mhartington/oceanic-next'           " \                                                     |
-Plug 'ayu-theme/ayu-vim'                  " - Цветовые схемы                                      |
-Plug 'wojciechkepka/vim-github-dark'      " /                                                     |
-"                                                                                                 |
-Plug 'vim-airline/vim-airline'            " Нижняя панель                                         |
-Plug 'vim-airline/vim-airline-themes'     " Темы нижней панели                                    |
-"                                                                                                 |
-" ----------------------------------------===      Git       ===-----------------------------------
-"                                                                                                 |
-Plug 'mhinz/vim-signify'                  " Core-плагин для поддержки Git                         |
-Plug 'tpope/vim-fugitive'                 " Git команды для vim/neovim                            |
-"                                                                                                 |
-" ----------------------------------------===     Python     ===-----------------------------------
-"                                                                                                 |
-Plug 'mitsuhiko/vim-jinja'		          " Поддержка языка Jinja для neovim                      |
-"                                                                                                 |
-" ----------------------------------------===      Rust      ===----------------------------------|
-"                                                                                                 |
-Plug 'simrat39/rust-tools.nvim'           " Вкл. фич rust-analyzer                                |
-"                                                                                                 |
-" =================================================================================================
+"════════════════════════════════════════╦════════════════╦═══════════════════════════════════════╗
+"                                        ║    Плагины     ║                                       ║
+"════════════════════════════════════════╩════════════════╩═══════════════════════════════════════╣
+"                                                                                                 ║
+"                                                                                                 ║
+"────────────────────────────────────────┤    Основные    ├───────────────────────────────────────╢
+"                                                                                                 ║
+Plug 'neovim/nvim-lspconfig'              " ────┐                                                 ║ 
+Plug 'saadparwaiz1/cmp_luasnip'           " ────┤                                                 ║
+Plug 'hrsh7th/nvim-cmp'                   " ────┤                                                 ║
+Plug 'hrsh7th/cmp-nvim-lsp'               " ────┤                                                 ║
+Plug 'hrsh7th/cmp-vsnip'                  " ────┼── Вспомогательные файлы для init.vim, Lua и LSP ║
+Plug 'hrsh7th/cmp-path'                   " ────┤                                                 ║
+Plug 'hrsh7th/cmp-buffer'                 " ────┤                                                 ║
+Plug 'hrsh7th/vim-vsnip'                  " ────┤                                                 ║
+Plug 'L3MON4D3/LuaSnip'                   " ────┘                                                 ║
+"                                                                                                 ║     
+Plug 'scrooloose/nerdcommenter'           " Удобная постановка комментариев                       ║
+Plug 'jiangmiao/auto-pairs'               " Закрытие парных скобок и кавычек                      ║
+Plug 'sheerun/vim-polyglot'               " Более хорошая подсветка синтаксиса                    ║
+Plug 'easymotion/vim-easymotion'          " Более простые прыжки к кускам кода                    ║
+Plug 'mattn/emmet-vim'                    " Emmet для vim                                         ║
+Plug 'tpope/vim-surround'                 " Удобное оборачивание текста (Emmet для остального)    ║
+Plug 'kyazdani42/nvim-tree.lua'           " Файловое дерево                                       ║
+Plug 'kyazdani42/nvim-web-devicons'       " Фикс инокок вместо вопросиков                         ║
+Plug 'romgrk/barbar.nvim'                 " Панель вкладок для neovim                             ║
+"                                                                                                 ║
+"────────────────────────────────────────┤ Цветовые схемы ├───────────────────────────────────────╢
+"                                                                                                 ║
+Plug 'mhartington/oceanic-next'           " ─┐                                                    ║
+Plug 'ayu-theme/ayu-vim'                  " ─┼─ Цветовые схемы                                    ║
+Plug 'wojciechkepka/vim-github-dark'      " ─┘                                                    ║
+"                                                                                                 ║
+Plug 'vim-airline/vim-airline'            " Нижняя панель                                         ║
+Plug 'vim-airline/vim-airline-themes'     " Темы нижней панели                                    ║
+"                                                                                                 ║
+"────────────────────────────────────────┤      Git       ├───────────────────────────────────────╢
+"                                                                                                 ║
+Plug 'mhinz/vim-signify'                  " Core-плагин для поддержки Git                         ║
+Plug 'tpope/vim-fugitive'                 " Git команды для vim/neovim                            ║
+"                                                                                                 ║
+"────────────────────────────────────────┤     Python     ├───────────────────────────────────────╢
+"                                                                                                 ║
+Plug 'mitsuhiko/vim-jinja'		          " Поддержка языка Jinja для neovim                      ║
+"                                                                                                 ║
+"────────────────────────────────────────┤      Rust      ├───────────────────────────────────────╢
+"                                                                                                 ║
+Plug 'simrat39/rust-tools.nvim'           " Вкл. фич rust-analyzer                                ║
+"                                                                                                 ║
+"────────────────────────────────────────┤     Разное     ├───────────────────────────────────────╢
+"                                                                                                 ║
+Plug 'nvim-orgmode/orgmode'               " Плагин для работы с todo-списками                     ║
+Plug 'nvim-treesitter/nvim-treesitter'    " Измененная подсветка синтансиса языков                ║
+"                                                                                                 ║
+"═════════════════════════════════════════════════════════════════════════════════════════════════╝
 
 call plug#end()                                        
 
-
-" =================================================================================================
-" =                                           Настройки neovim                                    =
-" =================================================================================================
-"                                                                                                 |
-"                                                                                                 |
-" ----------------------------------===           Основное           ===---------------------------
-"
-set nocompatible                              " Что-то полезное
-set mouse=a                                   " Расширенный режим для мыши
-set encoding=utf-8                            " Основная кодировка по умолчаюнию - utf-8
-set number                                    " Нумерация строк
-set noswapfile                                " Отключить swap-файлы для neovim
-set scrolloff=7                               " Расстояние сверху и снизу при скроле для курсора
-"
-set clipboard+=unnamedplus                    " Тип буфера обмена
-set tabstop=4                                 " Число пробелов в Tab'е
-set softtabstop=4                             " Почти то же, что и tabstop
-set shiftwidth=4                              " Сдвиг = Tab, но для плагинов
-set expandtab                                 " Замена Tab'а на пробелы
-set autoindent                                " Сохранение отступа строки при переходе на новую
-set fileformat=unix                           " Формат файла (neovim использую всегда на linux)
-filetype indent on                            " Вкл. идентификация редактируемого в nvim файла
-"
-set completeopt=menuone,noinsert,noselect     " Сценарии, когда выпадающее меню может появиться
-set shortmess+=c                              " Предотвр. показ доп сообщений при comlete 
-set updatetime=300                            " Время обновления состояния файла и CursorHold 
-"
-" ----------------------------------===  Инициализация темы neovim   ===---------------------------
-
-set termguicolors                             " Вкл. 24-битный режим цветов
-colorscheme ayu                               " Цветовая схема
-let ayucolor='dark'                           " Тип цветовой схемы ayu (dark)
-let g:airline_theme='ayu_dark'                " Тема для нижней панели neovim
-set colorcolumn=100                           " Рулетка, показывающая рекомендуемую длину строки
-
-" ----------------------------------===  Настройка горячих клавиш    ===---------------------------
-
+"═════════════════════════════════╦══════════════════════════════╦════════════════════════════════╗
+"                                 ║       Настройки neovim       ║                                ║ 
+"═════════════════════════════════╩══════════════════════════════╩════════════════════════════════╣
+"                                                                                                 ║
+"                                                                                                 ║
+"─────────────────────────────────┤           Основное           ├────────────────────────────────╢
+"                                                                                                 ║
+language en_US.utf8                       " Устанавливает язык в en_US (нужно для orgmode)        ║
+set nocompatible                          " Что-то полезное                                       ║
+set mouse=a                               " Расширенный режим для мыши                            ║
+set encoding=utf-8                        " Основная кодировка по умолчаюнию - utf-8              ║
+set number                                " Нумерация строк                                       ║
+set noswapfile                            " Отключить swap-файлы для neovim                       ║
+set scrolloff=7                           " Расстояние сверху и снизу при скроле для курсора      ║
+"                                                                                                 ║
+set clipboard+=unnamedplus                " Тип буфера обмена                                     ║
+set tabstop=4                             " Число пробелов в Tab'е                                ║
+set softtabstop=4                         " Почти то же, что и tabstop                            ║
+set shiftwidth=4                          " Сдвиг = Tab, но для плагинов                          ║
+set expandtab                             " Замена Tab'а на пробелы                               ║
+set autoindent                            " Сохранение отступа строки при переходе на новую       ║
+set fileformat=unix                       " Формат файла (neovim использую всегда на linux)       ║
+filetype indent on                        " Вкл. идентификация редактируемого в nvim файла        ║
+"                                                                                                 ║
+set completeopt=menuone,noinsert,noselect " Сценарии, когда выпадающее меню может появиться       ║
+set shortmess+=c                          " Предотвр. показ доп сообщений при comlete             ║
+set updatetime=300                        " Время обновления состояния файла и CursorHold         ║
+"                                                                                                 ║
+"─────────────────────────────────┤  Инициализация темы neovim   ├────────────────────────────────╢
+"                                                                                                 ║
+set termguicolors                         " Вкл. 24-битный режим цветов                           ║
+colorscheme ayu                           " Цветовая схема                                        ║
+let ayucolor='dark'                       " Тип цветовой схемы ayu (dark)                         ║
+let g:airline_theme='ayu_dark'            " Тема для нижней панели neovim                         ║
+set colorcolumn=100                       " Рулетка, показывающая рекомендуемую длину строки      ║
+"                                                                                                 ║
+"─────────────────────────────────┤  Настройка горячих клавиш    ├────────────────────────────────╢
+"                                                                                                 ╨
 " Использование базовых команд с русской раскладкой
 nmap о j
 nmap л k
@@ -162,45 +167,88 @@ nnoremap <silent> <leader><leader>k :bd!<CR>
 " Запуск текущего python-файла
 nnoremap <silent> <F3> :! python3 % <CR>
 
-"-----------------------------------===   Автоматические команды    ===----------------------------
-
+" Аббревиатура для быстрого вывода текущей даты и времени
+inoreabbrev cdt <C-R>=strftime('%Y-%m-%d %H:%M:%S')<CR>
+"                                                                                                 ╥
+"─────────────────────────────────┤    Автоматические команды    ├────────────────────────────────╢
+"                                                                                                 ╨
 " показывает ошибки/предупреждения развернуто спустя какое-то время
 autocmd CursorHold * lua vim.diagnostic.open_float(nil, {focusable = false})
 " удаление пробелов в конце строки
 autocmd BufWritePre *.py :%s/\s\+$//e
-
-" ----------------------------------=== Шпора по встроенным хоткеям ===----------------------------
-
-" <leader><leader>w   -   прыжок вперед по паттернам
-" <leader><leader>b   -   прыжок назад по паттернам
-" <leader><leader>s   -   прыжок к паттерну введенной буквы
-" <leader><leader>f   -   прыжок к паттерну введенной буквы (вперед)
-" K                   -   справка о функции/классе/методе
-" <Ctrl-y>,           -   wrap в Emmet
-" <A-p>               -   вкл/выкл. постановку парных кавычек/скобок и т.д.
-
-" =================================================================================================
-
-
-
-" ----------------------------------===        Что-то на Lua        ===----------------------------
+"                                                                                                 ╥
+"─────────────────────────────────┤  Шпора по встроенным хоткеям ├────────────────────────────────╢
+"                                                                                                 ║
+" <leader><leader>w   -   прыжок вперед по паттернам                                              ║
+" <leader><leader>b   -   прыжок назад по паттернам                                               ║
+" <leader><leader>s   -   прыжок к паттерну введенной буквы                                       ║
+" <leader><leader>f   -   прыжок к паттерну введенной буквы (вперед)                              ║
+" K                   -   справка о функции/классе/методе                                         ║
+" <Ctrl-y>,           -   wrap в Emmet                                                            ║
+" <A-p>               -   вкл/выкл. постановку парных кавычек/скобок и т.д.                       ║
+"                                                                                                 ║
+"═════════════════════════════════════════════════════════════════════════════════════════════════╣
+"                                                                                                 ║
+"                                                                                                 ║
+"                                                                                                 ║
+"─────────────────────────────────┤        Что-то на Lua        ├─────────────────────────────────╢
+"                                                                                                 ╨
+" nvim-tree
 lua << EOF
 require'nvim-tree'.setup()
 EOF
 
+" orgmode
+lua << EOF
+require('orgmode').setup_ts_grammar()
+
+require'nvim-treesitter.configs'.setup {
+  highlight = {
+    enable = true,
+    additional_vim_regex_highlighting = {'org'}, 
+  },
+  ensure_installed = {'org'},
+}
+
+require('orgmode').setup({
+  org_agenda_files = {'~/code/Repositories/**/project.org', '~/my-orgs/**/*'},
+  org_default_notes_file = '~/code/Repositories/repositories.org',
+})
+EOF
+
+" mapping
 lua << EOF
 vim.o.completeopt = 'menuone,noselect'
 
 local luasnip = require 'luasnip'
-
 local cmp = require 'cmp'
+
 cmp.setup {
   completion = {
     autocomplete = false
   },
+  window = {
+     completion = cmp.config.window.bordered(),
+     documentation = cmp.config.window.bordered(),
+  },
   snippet = {
     expand = function(args)
       require('luasnip').lsp_expand(args.body)
+    end,
+  },
+  formatting = {
+    fields = {'menu', 'abbr', 'kind'},
+    format = function(entry, item)
+      local menu_icon = {
+        nvim_lsp = 'λ',
+        luasnip = '⋗',
+        buffer = 'Ω',
+        path = '🖫',
+        orgmode = '★',
+      }
+
+      item.menu = menu_icon[entry.source.name]
+      return item
     end,
   },
   mapping = {
@@ -220,10 +268,12 @@ cmp.setup {
   sources = {
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
+    { name = 'orgmode' }
   },
 }
 EOF
 
+" LSP config for rust analizer
 lua <<EOF
 local nvim_lsp = require('lspconfig')
 
@@ -250,7 +300,7 @@ local opts = {
 require('rust-tools').setup(opts)
 EOF
 
-
+" buffer mapping
 lua << EOF
 local nvim_lsp = require('lspconfig')
 
@@ -283,7 +333,7 @@ local on_attach = function(client, bufnr)
 
 end
 
-local servers = { 'pyright'} 
+local servers = { 'pyright' } 
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = on_attach,
@@ -295,7 +345,7 @@ end
 EOF
 
 
-
+" Buffer expanded
 if v:version < 700 || exists('loaded_bclose') || &cp
   finish
 endif
@@ -356,4 +406,5 @@ function! s:Bclose(bang, buffer)
 endfunction
 command! -bang -complete=buffer -nargs=? Bclose call <SID>Bclose(<q-bang>, <q-args>)
 nnoremap <silent> <Leader>bd :Bclose<CR>
-
+"                                                                                                 ╥
+"═════════════════════════════════════════════════════════════════════════════════════════════════╝
