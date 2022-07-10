@@ -68,7 +68,7 @@ Plug 'simrat39/rust-tools.nvim'                  " Вкл. фич rust-analyzer 
 "────────────────────────────────────────┤     Разное     ├───────────────────────────────────────╢
 "                                                                                                 ║
 Plug 'ellisonleao/glow.nvim', {'branch': 'main'} " Превью для markdown файлов через glow          ║
-Plug 'nvim-orgmode/orgmode'                      " Плагин для работы с todo-списками              ║
+Plug 'dewyze/vim-tada'                           " todo-manager, похожий на todo+ из VS code      ║
 Plug 'nvim-treesitter/nvim-treesitter'           " Измененная подсветка синтансиса языков         ║
 "                                                                                                 ║
 "═════════════════════════════════════════════════════════════════════════════════════════════════╝
@@ -213,24 +213,6 @@ autocmd BufWritePre *.py :%s/\s\+$//e
 " nvim-tree
 lua << EOF
 require'nvim-tree'.setup()
-EOF
-
-" orgmode
-lua << EOF
-require('orgmode').setup_ts_grammar()
-
-require'nvim-treesitter.configs'.setup {
-  highlight = {
-    enable = true,
-    additional_vim_regex_highlighting = {'org'}, 
-  },
-  ensure_installed = {'org'},
-}
-
-require('orgmode').setup({
-  org_agenda_files = {'~/code/Repositories/**/project.org', '~/my-orgs/**/*'},
-  org_default_notes_file = '~/code/Repositories/repositories.org',
-})
 EOF
 
 " mapping
