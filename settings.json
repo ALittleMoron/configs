@@ -2,7 +2,7 @@
     // -------- editor -------- //
     "editor.detectIndentation": false,
     "editor.folding": false,
-    "editor.fontSize": 16,
+    "editor.fontSize": 14,
     "editor.glyphMargin": false,
     "editor.lineNumbers": "on",
     "editor.minimap.enabled": false,
@@ -12,7 +12,7 @@
         "strings": true
     },
     "editor.renderWhitespace": "boundary",
-    "editor.rulers": [80],
+    "editor.rulers": [100],
     "editor.smoothScrolling": true,
     "editor.suggestOnTriggerCharacters": false,
     "editor.suggestSelection": "first",
@@ -29,7 +29,7 @@
     "files.associations": {
         "**/*.html": "html",
         "**/templates/**/*.html": "django-html",
-        "**/templates/**/*": "django-txt",
+        "**/templates/**/*": "django-txt"
     },
     
     "[html]": 
@@ -108,13 +108,13 @@
     
     "security.workspace.trust.untrustedFiles": "open",
     
-    "terminal.integrated.fontSize": 16,
+    "terminal.integrated.fontSize": 14,
     "terminal.integrated.cursorStyle": "line", 
     
     "vsicons.dontShowNewVersionMessage": true,
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     
-    "window.menuBarVisibility": "toggle",
+    "window.menuBarVisibility": "compact",
     "workbench.activityBar.visible": true,
     "workbench.colorTheme": "Andromeda Bordered",
     "workbench.editorAssociations": 
@@ -138,25 +138,6 @@
     ],
     "auto-close-tag.enableAutoCloseSelfClosingTag": true,
     "auto-close-tag.enableAutoCloseTag": true,
-
-    "liveServer.settings.donotShowInfoMsg": true,
-    "liveServer.settings.donotVerifyTags": true,
-    
-    "shellLauncher.shells.windows": 
-    [
-        {
-            "shell": "C:\\WINDOWS\\System32\\cmd.exe",
-            "label": "cmd"
-        },
-        {
-            "shell": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
-            "label": "PowerShell"
-        },
-        {
-            "shell": "C:\\Program Files\\Git\\bin\\bash.exe",
-            "label": "Git bash"
-        }
-    ],
     
     // Python
     "python.formatting.provider": "black",
@@ -167,7 +148,7 @@
     "python.terminal.activateEnvironment": true,
 
     // Rust
-   "rust-analyzer.inlayHints.typeHints": false, 
+   "rust-analyzer.inlayHints.typeHints.enable": false,
 
     // "Vim emulation for Visual Studio Code"
     "vim.easymotion": true,
@@ -178,5 +159,5 @@
     "vim.hlsearch": true,
     "vim.incsearch": true,
     "vim.useSystemClipboard": true,
-    "vim.useCtrlKeys": true,
+    "vim.useCtrlKeys": true
 }
