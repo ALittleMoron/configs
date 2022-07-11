@@ -70,6 +70,8 @@ Plug 'simrat39/rust-tools.nvim'                  " Вкл. фич rust-analyzer 
 Plug 'ellisonleao/glow.nvim', {'branch': 'main'} " Превью для markdown файлов через glow          ║
 Plug 'dewyze/vim-tada'                           " todo-manager, похожий на todo+ из VS code      ║
 Plug 'nvim-treesitter/nvim-treesitter'           " Измененная подсветка синтансиса языков         ║
+Plug 'junegunn/fzf', {'do':{->fzf#install()}}    " Проверка на то, установлен ли fzf              ║
+Plug 'junegunn/fzf.vim'                          " fzf для vim/neovim                             ║
 "                                                                                                 ║
 "═════════════════════════════════════════════════════════════════════════════════════════════════╝
 
@@ -182,6 +184,9 @@ nnoremap <silent> <F3> :! python3 % <CR>
 
 " Превью для md-файлов
 noremap <silent> <leader>m :Glow<CR>
+
+" fzf поиск
+nnoremap <silent> F :GFiles<CR>
 
 " Аббревиатура для быстрого вывода текущей даты и времени
 inoreabbrev cdt <C-R>=strftime('%Y-%m-%d %H:%M:%S')<CR>
@@ -409,5 +414,12 @@ function! s:Bclose(bang, buffer)
 endfunction
 command! -bang -complete=buffer -nargs=? Bclose call <SID>Bclose(<q-bang>, <q-args>)
 nnoremap <silent> <Leader>bd :Bclose<CR>
+"                                                                                                 ╥
+"═════════════════════════════════════════════════════════════════════════════════════════════════╣
+" подсветка сообщений LSP (белый цвет)                                                            ╨
+hi DiagnosticError guifg=White
+hi DiagnosticWarn  guifg=White    
+hi DiagnosticInfo  guifg=White
+hi DiagnosticHint  guifg=White
 "                                                                                                 ╥
 "═════════════════════════════════════════════════════════════════════════════════════════════════╝
