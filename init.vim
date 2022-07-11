@@ -190,6 +190,9 @@ nnoremap <silent> F :GFiles<CR>
 
 " Аббревиатура для быстрого вывода текущей даты и времени
 inoreabbrev cdt <C-R>=strftime('%Y-%m-%d %H:%M:%S')<CR>
+
+noremap <silent> <A-k> :m +1<CR>
+noremap <silent> <A-j> :m -2<CR>
 "                                                                                                 ╥
 "─────────────────────────────────┤    Автоматические команды    ├────────────────────────────────╢
 "                                                                                                 ╨
