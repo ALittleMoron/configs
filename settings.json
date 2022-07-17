@@ -5,6 +5,7 @@
     "editor.fontSize": 14,
     "editor.glyphMargin": false,
     "editor.lineNumbers": "on",
+    "editor.linkedEditing": true,
     "editor.minimap.enabled": false,
     "editor.quickSuggestions": {
         "other": true,
@@ -24,15 +25,15 @@
     },
     "emmet.triggerExpansionOnTab": true,
     "explorer.confirmDragAndDrop": false,
-    
+
     "files.defaultLanguage": "python",
     "files.associations": {
         "**/*.html": "html",
         "**/templates/**/*.html": "django-html",
-        "**/templates/**/*": "django-txt"
+        "**/templates/**/*": "django-txt",
     },
-    
-    "[html]": 
+
+    "[html]":
     {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
@@ -98,26 +99,27 @@
             ]
         }
     },
-    
-    "[jsonc]": 
+
+    "[jsonc]":
     {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    
+
     "notebook.lineNumbers": "on",
-    
+
     "security.workspace.trust.untrustedFiles": "open",
-    
+
+    "terminal.integrated.shellIntegration.enabled": true,
+    "terminal.integrated.cursorStyle": "line",
     "terminal.integrated.fontSize": 14,
-    "terminal.integrated.cursorStyle": "line", 
-    
-    "vsicons.dontShowNewVersionMessage": true,
+    "terminal.integrated.defaultProfile.linux": "zsh",
+
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    
+
     "window.menuBarVisibility": "compact",
     "workbench.activityBar.visible": true,
     "workbench.colorTheme": "Andromeda Bordered",
-    "workbench.editorAssociations": 
+    "workbench.editorAssociations":
     {
         "*.ipynb": "jupyter-notebook",
         "*.txt": "default"
@@ -128,30 +130,60 @@
     "workbench.startupEditor": "newUntitledFile",
     "workbench.statusBar.visible": true,
 
+
     // -------- extensions -------- //
 
     // front-end
     "auto-close-tag.activationOnLanguage": [
-        "xml", "php", "blade", "ejs", "jinja", "javascript", "javascriptreact", 
+        "xml", "php", "blade", "ejs", "jinja", "javascript", "javascriptreact",
         "typescript", "typescriptreact", "plaintext", "markdown", "vue", "liquid",
         "erb", "lang-cfml", "cfml", "HTML (EEx)", "HTML (Eex)", "plist", "django-html"
     ],
     "auto-close-tag.enableAutoCloseSelfClosingTag": true,
     "auto-close-tag.enableAutoCloseTag": true,
-    
+
     // Python
     "python.formatting.provider": "black",
+    "python.analysis.typeCheckingMode": "basic",
     "python.languageServer": "Default",
+    "python.analysis.autoSearchPaths": true,
+    "python.analysis.indexing": true,
     "python.linting.enabled": true,
     "python.linting.lintOnSave": true,
     "python.linting.mypyEnabled": true,
+    "python.linting.pycodestyleEnabled": true,
+    "python.linting.pycodestyleArgs": [
+        "--max-line-length=100"
+    ],
     "python.terminal.activateEnvironment": true,
 
-    // Rust
-   "rust-analyzer.inlayHints.typeHints.enable": false,
-
-    // "Vim emulation for Visual Studio Code"
+    // "vim emulation for Visual Studio Code"
     "vim.easymotion": true,
+    "vim.surround": true,
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": ["K"],
+            "commands": ["editor.action.showHover"]
+        },
+        {
+            "before": ["<leader>", "n"],
+            "commands": ["workbench.action.toggleSidebarVisibility"]
+        },
+        {
+            "before": ["<leader>", "k"],
+            "commands": ["workbench.action.closeActiveEditor"]
+        },
+    ],
+    "vim.visualModeKeyBindings": [
+        {
+            "before": ["J"],
+            "commands": ["editor.action.moveLinesDownAction"]
+        },
+        {
+            "before": ["K"],
+            "commands": ["editor.action.moveLinesUpAction"]
+        }
+    ],
     "vim.handleKeys": {
         "<C-k>": false,
         "<C-j>": false
@@ -159,5 +191,27 @@
     "vim.hlsearch": true,
     "vim.incsearch": true,
     "vim.useSystemClipboard": true,
-    "vim.useCtrlKeys": true
+    "vim.useCtrlKeys": true,
+
+    // GitLens
+    "gitlens.defaultDateShortFormat": "DD/MM/YYYY",
+    "gitlens.defaultDateLocale": null,
+    "gitlens.defaultDateFormat": "DD/MM/YYYY, dddd, HH:mm:ss",
+    "gitlens.advanced.messages": {
+        "suppressLineUncommittedWarning": true
+    },
+
+    // cSpell (language checker)
+    "cSpell.language": "en,ru",
+    "cSpell.userWords": [
+        "easymotion",
+        "esbenp",
+        "hlsearch",
+        "incsearch",
+        "ipynb",
+        "mypy",
+        "pycodestyle",
+        "regexes",
+        "vsintellicode"
+    ],
 }
