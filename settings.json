@@ -1,217 +1,239 @@
 {
-    // -------- editor -------- //
-    "editor.detectIndentation": false,
-    "editor.folding": false,
-    "editor.fontSize": 14,
-    "editor.glyphMargin": false,
-    "editor.lineNumbers": "on",
-    "editor.linkedEditing": true,
-    "editor.minimap.enabled": false,
-    "editor.quickSuggestions": {
-        "other": true,
-        "comments": true,
-        "strings": true
-    },
-    "editor.renderWhitespace": "boundary",
-    "editor.rulers": [100],
-    "editor.smoothScrolling": true,
-    "editor.suggestOnTriggerCharacters": false,
-    "editor.suggestSelection": "first",
-    "editor.tabCompletion": "on",
-    "editor.useTabStops": false,
-    "editor.wordWrap": "on",
-    "emmet.includeLanguages": {
-        "django-html": "html"
-    },
-    "emmet.triggerExpansionOnTab": true,
-    "explorer.confirmDragAndDrop": false,
+  // -------- editor -------- //
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": true,
+    "source.fixAll": false
+  },
+  "editor.detectIndentation": false,
+  "editor.folding": false,
+  "editor.fontSize": 14,
+  "editor.glyphMargin": false,
+  "editor.lineNumbers": "on",
+  "editor.linkedEditing": true,
+  "editor.minimap.enabled": false,
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": true,
+    "strings": true
+  },
+  "editor.renderWhitespace": "boundary",
+  "editor.rulers": [100],
+  "editor.smoothScrolling": true,
+  "editor.suggestOnTriggerCharacters": false,
+  "editor.suggestSelection": "first",
+  "editor.tabCompletion": "on",
+  "editor.useTabStops": false,
+  "editor.wordWrap": "on",
+  "emmet.includeLanguages": {
+    "django-html": "html"
+  },
+  "emmet.triggerExpansionOnTab": true,
+  "explorer.confirmDragAndDrop": false,
 
-    "files.defaultLanguage": "python",
-    "files.associations": {
-        "**/*.html": "html",
-        "**/templates/**/*.html": "django-html",
-        "**/templates/**/*": "django-txt",
-    },
+  "files.defaultLanguage": "python",
+  "files.associations": {
+    "**/*.html": "html",
+    "**/templates/**/*.html": "django-html",
+    "**/templates/**/*": "django-txt"
+  },
 
-    "[html]":
-    {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "highlight.regexes": {
-        "((?:<!-- *)?(?:#|// @|//|./\\*+|<!--|--|\\* @|{!|{{!--|{{!) *TODO(?:\\s*\\([^)]+\\))?:?)((?!\\w)(?: *-->| *\\*/| *!}| *--}}| *}}|(?= *(?:[^:]//|/\\*+|<!--|@|--|{!|{{!--|{{!))|(?: +[^\\n@]*?)(?= *(?:[^:]//|/\\*+|<!--|@|--(?!>)|{!|{{!--|{{!))|(?: +[^@\\n]+)?))": {
-            "filterFileRegex": ".*(?<!CHANGELOG.md)$",
-            "decorations": [
-                {
-                    "overviewRulerColor": "#ffcc00",
-                    "backgroundColor": "#ffcc00",
-                    "color": "#1f1f1f",
-                    "fontWeight": "bold"
-                },
-                {
-                    "backgroundColor": "#ffcc00",
-                    "color": "#1f1f1f"
-                }
-            ]
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "highlight.regexes": {
+    "((?:<!-- *)?(?:#|// @|//|./\\*+|<!--|--|\\* @|{!|{{!--|{{!) *TODO(?:\\s*\\([^)]+\\))?:?)((?!\\w)(?: *-->| *\\*/| *!}| *--}}| *}}|(?= *(?:[^:]//|/\\*+|<!--|@|--|{!|{{!--|{{!))|(?: +[^\\n@]*?)(?= *(?:[^:]//|/\\*+|<!--|@|--(?!>)|{!|{{!--|{{!))|(?: +[^@\\n]+)?))": {
+      "filterFileRegex": ".*(?<!CHANGELOG.md)$",
+      "decorations": [
+        {
+          "overviewRulerColor": "#ffcc00",
+          "backgroundColor": "#ffcc00",
+          "color": "#1f1f1f",
+          "fontWeight": "bold"
         },
-        "((?:<!-- *)?(?:#|// @|//|./\\*+|<!--|--|\\* @|{!|{{!--|{{!) *(?:FIXME|FIX|BUG|UGLY|DEBUG|HACK)(?:\\s*\\([^)]+\\))?:?)((?!\\w)(?: *-->| *\\*/| *!}| *--}}| *}}|(?= *(?:[^:]//|/\\*+|<!--|@|--|{!|{{!--|{{!))|(?: +[^\\n@]*?)(?= *(?:[^:]//|/\\*+|<!--|@|--(?!>)|{!|{{!--|{{!))|(?: +[^@\\n]+)?))": {
-            "filterFileRegex": ".*(?<!CHANGELOG.md)$",
-            "decorations": [
-                {
-                    "overviewRulerColor": "#cc0000",
-                    "backgroundColor": "#cc0000",
-                    "color": "#1f1f1f",
-                    "fontWeight": "bold"
-                },
-                {
-                    "backgroundColor": "#cc0000",
-                    "color": "#1f1f1f"
-                }
-            ]
-        },
-        "((?:<!-- *)?(?:#|// @|//|./\\*+|<!--|--|\\* @|{!|{{!--|{{!) *(?:REVIEW|OPTIMIZE|TSC)(?:\\s*\\([^)]+\\))?:?)((?!\\w)(?: *-->| *\\*/| *!}| *--}}| *}}|(?= *(?:[^:]//|/\\*+|<!--|@|--|{!|{{!--|{{!))|(?: +[^\\n@]*?)(?= *(?:[^:]//|/\\*+|<!--|@|--(?!>)|{!|{{!--|{{!))|(?: +[^@\\n]+)?))": {
-            "filterFileRegex": ".*(?<!CHANGELOG.md)$",
-            "decorations": [
-                {
-                    "overviewRulerColor": "#00ccff",
-                    "backgroundColor": "#00ccff",
-                    "color": "#1f1f1f",
-                    "fontWeight": "bold"
-                },
-                {
-                    "backgroundColor": "#00ccff",
-                    "color": "#1f1f1f"
-                }
-            ]
-        },
-        "((?:<!-- *)?(?:#|// @|//|./\\*+|<!--|--|\\* @|{!|{{!--|{{!) *(?:IDEA)(?:\\s*\\([^)]+\\))?:?)((?!\\w)(?: *-->| *\\*/| *!}| *--}}| *}}|(?= *(?:[^:]//|/\\*+|<!--|@|--|{!|{{!--|{{!))|(?: +[^\\n@]*?)(?= *(?:[^:]//|/\\*+|<!--|@|--(?!>)|{!|{{!--|{{!))|(?: +[^@\\n]+)?))": {
-            "filterFileRegex": ".*(?<!CHANGELOG.md)$",
-            "decorations": [
-                {
-                    "overviewRulerColor": "#cc00cc",
-                    "backgroundColor": "#cc00cc",
-                    "color": "#1f1f1f",
-                    "fontWeight": "bold"
-                },
-                {
-                    "backgroundColor": "#cc00cc",
-                    "color": "#1f1f1f"
-                }
-            ]
+        {
+          "backgroundColor": "#ffcc00",
+          "color": "#1f1f1f"
         }
+      ]
     },
-
-    "[jsonc]":
-    {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-
-    "notebook.lineNumbers": "on",
-
-    "security.workspace.trust.untrustedFiles": "open",
-
-    "terminal.integrated.shellIntegration.enabled": true,
-    "terminal.integrated.cursorStyle": "line",
-    "terminal.integrated.fontSize": 14,
-    "terminal.integrated.defaultProfile.linux": "zsh",
-
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-
-    "window.menuBarVisibility": "compact",
-    "workbench.activityBar.visible": true,
-    "workbench.colorTheme": "Andromeda Bordered",
-    "workbench.editorAssociations":
-    {
-        "*.ipynb": "jupyter-notebook",
-        "*.txt": "default"
-    },
-    "workbench.editor.tabSizing": "shrink",
-    "workbench.iconTheme": "material-icon-theme",
-    "workspace.searchEnabled": true,
-    "workbench.startupEditor": "newUntitledFile",
-    "workbench.statusBar.visible": true,
-
-
-    // -------- extensions -------- //
-
-    // front-end
-    "auto-close-tag.activationOnLanguage": [
-        "xml", "php", "blade", "ejs", "jinja", "javascript", "javascriptreact",
-        "typescript", "typescriptreact", "plaintext", "markdown", "vue", "liquid",
-        "erb", "lang-cfml", "cfml", "HTML (EEx)", "HTML (Eex)", "plist", "django-html"
-    ],
-    "auto-close-tag.enableAutoCloseSelfClosingTag": true,
-    "auto-close-tag.enableAutoCloseTag": true,
-
-    // Python
-    "python.formatting.provider": "black",
-    "python.analysis.typeCheckingMode": "basic",
-    "python.languageServer": "Default",
-    "python.analysis.autoSearchPaths": true,
-    "python.analysis.indexing": true,
-    "python.linting.enabled": true,
-    "python.linting.lintOnSave": true,
-    "python.linting.mypyEnabled": true,
-    "python.linting.pycodestyleEnabled": true,
-    "python.linting.pycodestyleArgs": [
-        "--max-line-length=100"
-    ],
-    "python.terminal.activateEnvironment": true,
-
-    // "vim emulation for Visual Studio Code"
-    "vim.easymotion": true,
-    "vim.surround": true,
-    "vim.normalModeKeyBindingsNonRecursive": [
+    "((?:<!-- *)?(?:#|// @|//|./\\*+|<!--|--|\\* @|{!|{{!--|{{!) *(?:FIXME|FIX|BUG|UGLY|DEBUG|HACK)(?:\\s*\\([^)]+\\))?:?)((?!\\w)(?: *-->| *\\*/| *!}| *--}}| *}}|(?= *(?:[^:]//|/\\*+|<!--|@|--|{!|{{!--|{{!))|(?: +[^\\n@]*?)(?= *(?:[^:]//|/\\*+|<!--|@|--(?!>)|{!|{{!--|{{!))|(?: +[^@\\n]+)?))": {
+      "filterFileRegex": ".*(?<!CHANGELOG.md)$",
+      "decorations": [
         {
-            "before": ["K"],
-            "commands": ["editor.action.showHover"]
+          "overviewRulerColor": "#cc0000",
+          "backgroundColor": "#cc0000",
+          "color": "#1f1f1f",
+          "fontWeight": "bold"
         },
         {
-            "before": ["<leader>", "n"],
-            "commands": ["workbench.action.toggleSidebarVisibility"]
-        },
-        {
-            "before": ["<leader>", "k"],
-            "commands": ["workbench.action.closeActiveEditor"]
-        },
-    ],
-    "vim.visualModeKeyBindings": [
-        {
-            "before": ["J"],
-            "commands": ["editor.action.moveLinesDownAction"]
-        },
-        {
-            "before": ["K"],
-            "commands": ["editor.action.moveLinesUpAction"]
+          "backgroundColor": "#cc0000",
+          "color": "#1f1f1f"
         }
-    ],
-    "vim.handleKeys": {
-        "<C-k>": false,
-        "<C-j>": false
+      ]
     },
-    "vim.hlsearch": true,
-    "vim.incsearch": true,
-    "vim.useSystemClipboard": true,
-    "vim.useCtrlKeys": true,
-
-    // GitLens
-    "gitlens.defaultDateShortFormat": "DD/MM/YYYY",
-    "gitlens.defaultDateLocale": null,
-    "gitlens.defaultDateFormat": "DD/MM/YYYY, dddd, HH:mm:ss",
-    "gitlens.advanced.messages": {
-        "suppressLineUncommittedWarning": true
+    "((?:<!-- *)?(?:#|// @|//|./\\*+|<!--|--|\\* @|{!|{{!--|{{!) *(?:REVIEW|OPTIMIZE|TSC)(?:\\s*\\([^)]+\\))?:?)((?!\\w)(?: *-->| *\\*/| *!}| *--}}| *}}|(?= *(?:[^:]//|/\\*+|<!--|@|--|{!|{{!--|{{!))|(?: +[^\\n@]*?)(?= *(?:[^:]//|/\\*+|<!--|@|--(?!>)|{!|{{!--|{{!))|(?: +[^@\\n]+)?))": {
+      "filterFileRegex": ".*(?<!CHANGELOG.md)$",
+      "decorations": [
+        {
+          "overviewRulerColor": "#00ccff",
+          "backgroundColor": "#00ccff",
+          "color": "#1f1f1f",
+          "fontWeight": "bold"
+        },
+        {
+          "backgroundColor": "#00ccff",
+          "color": "#1f1f1f"
+        }
+      ]
     },
+    "((?:<!-- *)?(?:#|// @|//|./\\*+|<!--|--|\\* @|{!|{{!--|{{!) *(?:IDEA)(?:\\s*\\([^)]+\\))?:?)((?!\\w)(?: *-->| *\\*/| *!}| *--}}| *}}|(?= *(?:[^:]//|/\\*+|<!--|@|--|{!|{{!--|{{!))|(?: +[^\\n@]*?)(?= *(?:[^:]//|/\\*+|<!--|@|--(?!>)|{!|{{!--|{{!))|(?: +[^@\\n]+)?))": {
+      "filterFileRegex": ".*(?<!CHANGELOG.md)$",
+      "decorations": [
+        {
+          "overviewRulerColor": "#cc00cc",
+          "backgroundColor": "#cc00cc",
+          "color": "#1f1f1f",
+          "fontWeight": "bold"
+        },
+        {
+          "backgroundColor": "#cc00cc",
+          "color": "#1f1f1f"
+        }
+      ]
+    }
+  },
 
-    // cSpell (language checker)
-    "cSpell.language": "en,ru",
-    "cSpell.userWords": [
-        "easymotion",
-        "esbenp",
-        "hlsearch",
-        "incsearch",
-        "ipynb",
-        "mypy",
-        "pycodestyle",
-        "regexes",
-        "vsintellicode"
-    ],
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  "notebook.lineNumbers": "on",
+
+  "security.workspace.trust.untrustedFiles": "open",
+
+  "terminal.integrated.shellIntegration.enabled": true,
+  "terminal.integrated.cursorStyle": "line",
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.defaultProfile.linux": "zsh",
+
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+
+  "window.menuBarVisibility": "compact",
+  "workbench.activityBar.visible": true,
+  "workbench.colorTheme": "Andromeda Bordered",
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter-notebook",
+    "*.txt": "default"
+  },
+  "workbench.editor.tabSizing": "shrink",
+  "workbench.iconTheme": "material-icon-theme",
+  "workspace.searchEnabled": true,
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.statusBar.visible": true,
+  "workbench.tree.indent": 14,
+
+  // -------- extensions -------- //
+
+  // front-end
+  "auto-close-tag.activationOnLanguage": [
+    "xml",
+    "php",
+    "blade",
+    "ejs",
+    "jinja",
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "plaintext",
+    "markdown",
+    "vue",
+    "liquid",
+    "erb",
+    "lang-cfml",
+    "cfml",
+    "HTML (EEx)",
+    "HTML (Eex)",
+    "plist",
+    "django-html"
+  ],
+  "auto-close-tag.enableAutoCloseSelfClosingTag": true,
+  "auto-close-tag.enableAutoCloseTag": true,
+
+  // Python
+  "python.formatting.provider": "black",
+  "python.formatting.blackArgs": ["--line-length", "100"],
+  "python.analysis.typeCheckingMode": "basic",
+  "python.languageServer": "Default",
+  "python.analysis.autoSearchPaths": true,
+  "python.analysis.indexing": true,
+  "python.linting.enabled": true,
+  "python.linting.lintOnSave": true,
+  "python.linting.mypyEnabled": true,
+  "python.linting.pycodestyleEnabled": true,
+  "python.linting.pycodestyleArgs": ["--max-line-length=100"],
+  "python.terminal.activateEnvironment": true,
+
+  // "vim emulation for Visual Studio Code"
+  "vim.easymotion": true,
+  "vim.surround": true,
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["K"],
+      "commands": ["editor.action.showHover"]
+    },
+    {
+      "before": ["<leader>", "n"],
+      "commands": ["workbench.action.toggleSidebarVisibility"]
+    },
+    {
+      "before": ["<leader>", "k"],
+      "commands": ["workbench.action.closeActiveEditor"]
+    }
+  ],
+  "vim.visualModeKeyBindings": [
+    {
+      "before": ["J"],
+      "commands": ["editor.action.moveLinesDownAction"]
+    },
+    {
+      "before": ["K"],
+      "commands": ["editor.action.moveLinesUpAction"]
+    }
+  ],
+  "vim.handleKeys": {
+    "<C-k>": false,
+    "<C-j>": false
+  },
+  "vim.hlsearch": true,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+
+  // GitLens
+  "gitlens.defaultDateShortFormat": "DD/MM/YYYY",
+  "gitlens.defaultDateLocale": null,
+  "gitlens.defaultDateFormat": "DD/MM/YYYY, dddd, HH:mm:ss",
+  "gitlens.advanced.messages": {
+    "suppressLineUncommittedWarning": true
+  },
+
+  // cSpell (language checker)
+  "cSpell.language": "en,ru",
+  "cSpell.userWords": [
+    "autopep",
+    "easymotion",
+    "esbenp",
+    "hlsearch",
+    "incsearch",
+    "ipynb",
+    "mypy",
+    "pycodestyle",
+    "regexes",
+    "vsintellicode"
+  ],
+
+  // lifeline
+  "lifeline.clock.format": "HH:mm:ss DD.MM.YYYY"
 }

@@ -18,60 +18,66 @@ call plug#begin('~/.vim/plugged')
 "                                                                                                 ║
 "────────────────────────────────────────┤    Основные    ├───────────────────────────────────────╢
 "                                                                                                 ║
-Plug 'neovim/nvim-lspconfig'                     " ────┐                                          ║ 
-Plug 'saadparwaiz1/cmp_luasnip'                  " ────┤                                          ║
-Plug 'hrsh7th/nvim-cmp'                          " ────┤                                          ║
-Plug 'hrsh7th/cmp-nvim-lsp'                      " ────┤                                          ║
-Plug 'hrsh7th/cmp-vsnip'                         " ────┼─┬ Вспомогательные файлы для              ║
-Plug 'hrsh7th/cmp-path'                          " ────┤ └ init.vim, Lua и LSP                    ║
-Plug 'hrsh7th/cmp-buffer'                        " ────┤                                          ║
-Plug 'hrsh7th/vim-vsnip'                         " ────┤                                          ║
-Plug 'L3MON4D3/LuaSnip'                          " ────┤                                          ║
-Plug 'dcampos/cmp-snippy'                        " ────┘                                          ║
+Plug 'neovim/nvim-lspconfig'                                  " ────┐                             ║ 
+Plug 'saadparwaiz1/cmp_luasnip'                               " ────┤                             ║
+Plug 'hrsh7th/nvim-cmp'                                       " ────┤                             ║
+Plug 'hrsh7th/cmp-nvim-lsp'                                   " ────┤                             ║
+Plug 'hrsh7th/cmp-vsnip'                                      " ────┼─┬ Вспомогательные файлы для ║
+Plug 'hrsh7th/cmp-path'                                       " ────┤ └ init.vim, Lua и LSP       ║
+Plug 'hrsh7th/cmp-buffer'                                     " ────┤                             ║
+Plug 'hrsh7th/vim-vsnip'                                      " ────┤                             ║
+Plug 'L3MON4D3/LuaSnip'                                       " ────┤                             ║
+Plug 'dcampos/cmp-snippy'                                     " ────┘                             ║
 "                                                                                                 ║
-Plug 'dcampos/nvim-snippy'                       " Менеджер сниппетов                             ║
-Plug 'honza/vim-snippets'                        " Набор сниппетов для разных языков              ║
-Plug 'scrooloose/nerdcommenter'                  " Удобная постановка комментариев                ║
-Plug 'jiangmiao/auto-pairs'                      " Закрытие парных скобок и кавычек               ║
-Plug 'easymotion/vim-easymotion'                 " Более простые прыжки к кускам кода             ║
-Plug 'mattn/emmet-vim'                           " Emmet для neovim                               ║
-Plug 'tpope/vim-surround'                        " Удобное оборачивание текста (Emmet             ║
-"                                                  для остального кода)                           ║
-Plug 'kyazdani42/nvim-tree.lua'                  " Файловое дерево                                ║
-Plug 'kyazdani42/nvim-web-devicons'              " Фикс инокок вместо вопросиков                  ║
-Plug 'romgrk/barbar.nvim'                        " Панель вкладок для neovim                      ║
+Plug 'dcampos/nvim-snippy'                                    " Менеджер сниппетов                ║
+Plug 'honza/vim-snippets'                                     " Набор сниппетов для разных языков ║
+Plug 'scrooloose/nerdcommenter'                               " Удобная постановка комментариев   ║
+Plug 'jiangmiao/auto-pairs'                                   " Закрытие парных скобок и кавычек  ║
+Plug 'easymotion/vim-easymotion'                              " Более простые прыжки к кускам кода║
+Plug 'mattn/emmet-vim'                                        " Emmet для neovim                  ║
+Plug 'tpope/vim-surround'                                     " ─┬ Удобное оборачивание текста    ║
+"                                                                └ (Emmet для остального кода)    ║
+Plug 'kyazdani42/nvim-tree.lua'                               " Файловое дерево                   ║
+Plug 'kyazdani42/nvim-web-devicons'                           " Фикс инокок вместо вопросиков     ║
+Plug 'romgrk/barbar.nvim'                                     " Панель вкладок для neovim         ║
 "                                                                                                 ║
 "────────────────────────────────────────┤ Цветовые схемы ├───────────────────────────────────────╢
 "                                                                                                 ║
-Plug 'mhartington/oceanic-next'                  " ─┐                                             ║
-Plug 'ayu-theme/ayu-vim'                         " ─┼─ Цветовые схемы                             ║
-Plug 'wojciechkepka/vim-github-dark'             " ─┘                                             ║
+Plug 'mhartington/oceanic-next'                               " ─┐                                ║
+Plug 'ayu-theme/ayu-vim'                                      " ─┼─ Цветовые схемы                ║
+Plug 'wojciechkepka/vim-github-dark'                          " ─┘                                ║
 "                                                                                                 ║
-Plug 'vim-airline/vim-airline'                   " Нижняя панель                                  ║
-Plug 'vim-airline/vim-airline-themes'            " Темы нижней панели                             ║
+Plug 'vim-airline/vim-airline'                                " Нижняя панель                     ║
+Plug 'vim-airline/vim-airline-themes'                         " Темы нижней панели                ║
 "                                                                                                 ║
 "────────────────────────────────────────┤      Git       ├───────────────────────────────────────╢
 "                                                                                                 ║
-Plug 'mhinz/vim-signify'                         " Core-плагин для поддержки Git                  ║
-Plug 'tpope/vim-fugitive'                        " Git команды для vim/neovim                     ║
+Plug 'mhinz/vim-signify'                                      " Core-плагин для поддержки Git     ║
+Plug 'tpope/vim-fugitive'                                     " Git команды для vim/neovim        ║
 "                                                                                                 ║
 "────────────────────────────────────────┤     Python     ├───────────────────────────────────────╢
 "                                                                                                 ║
-Plug 'Vimjas/vim-python-pep8-indent'             " ─┬ Правильные отступы при многострочном        ║
-"                                                   └ вводе параметров                            ║
-Plug 'mitsuhiko/vim-jinja'		                 " Поддержка языка Jinja для neovim               ║
+Plug 'Vimjas/vim-python-pep8-indent'                          " ─┬ Правильные отступы при         ║
+"                                                                └ многострочном вводе параметров ║
+Plug 'mitsuhiko/vim-jinja'		                              " Поддержка языка Jinja для neovim  ║
 "                                                                                                 ║
 "────────────────────────────────────────┤      Rust      ├───────────────────────────────────────╢
 "                                                                                                 ║
-Plug 'simrat39/rust-tools.nvim'                  " Вкл. фич rust-analyzer                         ║
+Plug 'simrat39/rust-tools.nvim'                               " Вкл. фич rust-analyzer            ║
 "                                                                                                 ║
 "────────────────────────────────────────┤     Разное     ├───────────────────────────────────────╢
 "                                                                                                 ║
-Plug 'ellisonleao/glow.nvim', {'branch': 'main'} " Превью для markdown файлов через glow          ║
-Plug 'dewyze/vim-tada'                           " todo-manager, похожий на todo+ из VS code      ║
-Plug 'nvim-treesitter/nvim-treesitter'           " Измененная подсветка синтансиса языков         ║
-Plug 'junegunn/fzf', {'do':{->fzf#install()}}    " Проверка на то, установлен ли fzf              ║
-Plug 'junegunn/fzf.vim'                          " fzf для vim/neovim                             ║
+Plug 'ellisonleao/glow.nvim', {'branch': 'main'}              " ─┬ Превью для markdown файлов     ║
+"                                                               через glow                        ║
+Plug 'dewyze/vim-tada'                                        " todo-manager, похожий на todo+    ║
+"                                                               из VS code                        ║
+Plug 'nvim-treesitter/nvim-treesitter'                        " Измененная подсветка синтансиса   ║
+"                                                               языков                            ║
+Plug 'junegunn/fzf', {'do':{->fzf#install()}}                 " Проверка на то, установлен ли fzf ║
+Plug 'junegunn/fzf.vim'                                       " fzf для vim/neovim                ║
+Plug 'nvim-lua/plenary.nvim'                                  " зависимость для telescope         ║
+Plug 'nvim-telescope/telescope.nvim',{'tag':'0.1.0'}          " Поиск по файлам в директории      ║
+Plug 'nvim-telescope/telescope-fzf-native.nvim',{'do':'make'} " fzf для telescope                 ║
 "                                                                                                 ║
 "═════════════════════════════════════════════════════════════════════════════════════════════════╝
 
@@ -187,6 +193,11 @@ noremap <silent> <leader>m :Glow<CR>
 
 " fzf поиск
 nnoremap <silent> F :GFiles<CR>
+" Telescope bindings
+nnoremap <silent> <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <silent> <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <silent> <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <silent> <leader>fh <cmd>Telescope help_tags<cr>
 
 " Аббревиатура для быстрого вывода текущей даты и времени
 inoreabbrev cdt <C-R>=strftime('%Y-%m-%d %H:%M:%S')<CR>
