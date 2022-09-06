@@ -33,6 +33,10 @@
 
   "files.defaultLanguage": "python",
   "files.associations": {
+    "*.env.development": "env",
+    "*.env.production": "env",
+    "*.env.dev": "env",
+    "*.env.prod": "env",
     "**/*.html": "html",
     "**/templates/**/*.html": "django-html",
     "**/templates/**/*": "django-txt"
@@ -106,6 +110,11 @@
 
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  "[markdown]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true
   },
 
   "notebook.lineNumbers": "on",
