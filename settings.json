@@ -1,14 +1,16 @@
 {
+  "debug.allowBreakpointsEverywhere": true,
+
   // -------- editor -------- //
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
-    "source.organizeImports": true,
+    "source.organizeImports": false,
     "source.fixAll": false
   },
   "editor.detectIndentation": false,
   "editor.folding": false,
   "editor.fontSize": 14,
-  "editor.glyphMargin": false,
+  "editor.glyphMargin": true,
   "editor.lineNumbers": "on",
   "editor.linkedEditing": true,
   "editor.minimap.enabled": false,
@@ -244,5 +246,8 @@
   ],
 
   // lifeline
-  "lifeline.clock.format": "HH:mm:ss DD.MM.YYYY"
+  "lifeline.clock.format": "HH:mm:ss DD.MM.YYYY",
+
+  // project-manager
+  "projectManager.git.baseFolders": ["/home/dmitriy/code/Repositories/"]
 }
