@@ -80,10 +80,6 @@
     "command": "actions.find"
   },
   {
-    "key": "ctrl+b",
-    "command": "-workbench.action.toggleSidebarVisibility"
-  },
-  {
     "key": "ctrl+w",
     "command": "-workbench.action.closeActiveEditor"
   },
