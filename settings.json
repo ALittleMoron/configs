@@ -182,8 +182,11 @@
   "python.linting.enabled": true,
   "python.linting.lintOnSave": true,
   "python.linting.mypyEnabled": true,
-  "python.linting.pycodestyleEnabled": true,
-  "python.linting.pycodestyleArgs": ["--max-line-length=100"],
+  "python.linting.mypyArgs": [
+    "--follow-imports=silent",
+    "--ignore-missing-imports=true",
+    "--show-column-numbers"
+  ],
   "python.terminal.activateEnvironment": true,
 
   // "vim emulation for Visual Studio Code"
@@ -242,12 +245,11 @@
     "mypy",
     "pycodestyle",
     "regexes",
-    "vsintellicode"
+    "vsintellicode",
+    "dmitriy"
   ],
 
   // lifeline
   "lifeline.clock.format": "HH:mm:ss DD.MM.YYYY",
-
-  // project-manager
   "projectManager.git.baseFolders": ["/home/dmitriy/code/Repositories/"]
 }
