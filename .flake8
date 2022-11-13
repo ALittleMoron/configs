@@ -1,39 +1,48 @@
-# pip install wemake-python-styleguide
-# https://github.com/wemake-services/wemake-python-styleguide
+# base packages: flake8 flake8-commas flake8-docstrings fake8-isort flake8-encodings flake8_strftime
+#                flake8-secure-coding-standard flake8-slots flake8-string-format darglint
+#                flake8-useless-assert flake8-warnings flake8-comprehensions tryceratops
+#                flake8-datetimez flake8-implicit-str-concat flake8-return flake8-scream
+#                flake8-too-many flake8-broken-line flake8-pep3101 flake8-print flake8-use-pathlib
+#                flake8-functions-names flake8-variables-names pep8-naming
+
+# project specific packages: flake8-fastapi flake8-django flake8-django-migrations
+
+# multi_line_output types: https://github.com/timothycrosley/isort#multi-line-output-modes
 
 
 [flake8]
 max-line-length = 100
 show-source = True
 statistics = False
-doctests = True
 
-max-complexity = 6
-max-imports = 17
+doctests = True
+docstring-convention = google
 
 exclude =
-  .git
-  __pycache__
-  .venv
-  .eggs
-  *.egg
-  dist
-  tests/fixtures/**
-  tests/**/snapshots/**
+    .git
+    __pycache__
+    .venv
+    .eggs
+    *.egg
+    dist
+    tests/fixtures/**
+    tests/**/snapshots/**
+    migrations
+    alembic
+    airich
 
-# Exclude some pydoctest checks globally:
-ignore = D100, D104, D401, W504, RST303, RST304, DAR103, DAR203
+ignore =
+    D100
 
 
 [darglint]
-strictness = long
-docstring-style = google
+docstring_style=google
+strictness=long
 
 
 [isort]
 include_trailing_comma = true
 use_parentheses = true
-# See https://github.com/timothycrosley/isort#multi-line-output-modes
 multi_line_output = 5
 line_length = 100
 
@@ -41,3 +50,4 @@ default_section = THIRDPARTY
 skip_glob =
   tests/fixtures/**
   tests/**/snapshots/**
+
