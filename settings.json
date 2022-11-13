@@ -11,6 +11,7 @@
   "editor.folding": false,
   "editor.fontSize": 14,
   "editor.glyphMargin": true,
+  "editor.largeFileOptimizations": true,
   "editor.lineNumbers": "on",
   "editor.linkedEditing": true,
   "editor.minimap.enabled": false,
@@ -35,10 +36,7 @@
 
   "files.defaultLanguage": "python",
   "files.associations": {
-    "*.env.development": "env",
-    "*.env.production": "env",
-    "*.env.dev": "env",
-    "*.env.prod": "env",
+    ".env.*": "env",
     "**/*.html": "html",
     "**/templates/**/*.html": "django-html",
     "**/templates/**/*": "django-txt"
@@ -119,6 +117,16 @@
     "editor.formatOnPaste": true
   },
 
+  "[python]": {
+    "gitlens.codeLens.symbolScopes": ["!Module"],
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    },
+    "editor.wordBasedSuggestions": false,
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+
   "notebook.lineNumbers": "on",
 
   "security.workspace.trust.untrustedFiles": "open",
@@ -132,14 +140,13 @@
 
   "window.menuBarVisibility": "compact",
   "workbench.activityBar.visible": true,
-  "workbench.colorTheme": "Andromeda Bordered",
+  "workbench.colorTheme": "Ayu Mirage",
   "workbench.editorAssociations": {
     "*.ipynb": "jupyter-notebook",
     "*.txt": "default"
   },
   "workbench.editor.tabSizing": "shrink",
   "workbench.iconTheme": "material-icon-theme",
-  "workspace.searchEnabled": true,
   "workbench.startupEditor": "newUntitledFile",
   "workbench.statusBar.visible": true,
   "workbench.tree.indent": 14,
@@ -173,21 +180,21 @@
   "auto-close-tag.enableAutoCloseTag": true,
 
   // Python
-  "python.formatting.provider": "black",
-  "python.formatting.blackArgs": ["--line-length", "100"],
-  "python.analysis.typeCheckingMode": "basic",
+  "python.formatting.provider": "none",
+  "python.analysis.typeCheckingMode": "strict",
   "python.languageServer": "Default",
   "python.analysis.autoSearchPaths": true,
   "python.analysis.indexing": true,
   "python.linting.enabled": true,
+  "python.linting.pylintEnabled": false,
   "python.linting.lintOnSave": true,
-  "python.linting.mypyEnabled": true,
-  "python.linting.mypyArgs": [
-    "--follow-imports=silent",
-    "--ignore-missing-imports=true",
-    "--show-column-numbers"
-  ],
   "python.terminal.activateEnvironment": true,
+
+  "black-formatter.args": ["--max-line-length", "100"],
+  "black-formatter.importStrategy": "fromEnvironment",
+
+  "isort.args": ["--profile", "black"],
+  "isort.importStrategy": "fromEnvironment",
 
   // "vim emulation for Visual Studio Code"
   "vim.easymotion": true,
@@ -224,6 +231,7 @@
   "vim.incsearch": true,
   "vim.useSystemClipboard": true,
   "vim.useCtrlKeys": true,
+  "vim.autoindent": true,
 
   // GitLens
   "gitlens.defaultDateShortFormat": "DD/MM/YYYY",
@@ -236,20 +244,34 @@
   // cSpell (language checker)
   "cSpell.language": "en,ru",
   "cSpell.userWords": [
+    "autoindent",
     "autopep",
+    "dmitriy",
     "easymotion",
     "esbenp",
     "hlsearch",
     "incsearch",
     "ipynb",
+    "isort",
     "mypy",
     "pycodestyle",
     "regexes",
     "vsintellicode",
-    "dmitriy"
+    "pylint"
   ],
 
   // lifeline
   "lifeline.clock.format": "HH:mm:ss DD.MM.YYYY",
-  "projectManager.git.baseFolders": ["/home/dmitriy/code/Repositories/"]
+
+  // project manager
+  "projectManager.git.baseFolders": ["/home/dmitriy/code/Repositories/"],
+  "material-icon-theme.files.associations": {
+    "*.org": "../../icons/file_type_org",
+    "nginx.prod.conf": "../../icons/nginx",
+    "nginx.dev.conf": "../../icons/nginx"
+  },
+
+  // other
+  "redhat.telemetry.enabled": false,
+  "trailing-spaces.trimOnSave": true
 }
