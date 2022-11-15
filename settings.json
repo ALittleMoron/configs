@@ -190,10 +190,13 @@
   "python.linting.lintOnSave": true,
   "python.terminal.activateEnvironment": true,
 
-  "black-formatter.args": ["--max-line-length", "100"],
+  "black-formatter.args": ["--config", "pyproject.toml"],
   "black-formatter.importStrategy": "fromEnvironment",
 
-  "isort.args": ["--profile", "black"],
+  "flake8.args": ["--config", ".flake8"],
+  "flake8.importStrategy": "fromEnvironment",
+
+  "isort.args": ["--config", "pyproject.toml"],
   "isort.importStrategy": "fromEnvironment",
 
   // "vim emulation for Visual Studio Code"
@@ -257,7 +260,8 @@
     "pycodestyle",
     "regexes",
     "vsintellicode",
-    "pylint"
+    "pylint",
+    "pyproject"
   ],
 
   // lifeline
