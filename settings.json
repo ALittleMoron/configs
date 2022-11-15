@@ -196,7 +196,7 @@
   "flake8.args": ["--config", ".flake8"],
   "flake8.importStrategy": "fromEnvironment",
 
-  "isort.args": ["--config", "pyproject.toml"],
+  "isort.args": ["--settings-path", "pyproject.toml"],
   "isort.importStrategy": "fromEnvironment",
 
   // "vim emulation for Visual Studio Code"
