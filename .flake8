@@ -1,4 +1,4 @@
-# base packages: flake8 flake8-commas flake8-docstrings fake8-isort flake8-encodings flake8_strftime
+# base packages: flake8 flake8-commas flake8-docstrings flake8-isort flake8-encodings flake8_strftime
 #                flake8-secure-coding-standard flake8-slots flake8-string-format darglint
 #                flake8-useless-assert flake8-warnings flake8-comprehensions tryceratops
 #                flake8-datetimez flake8-implicit-str-concat flake8-return flake8-scream
