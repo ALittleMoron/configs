@@ -3,7 +3,7 @@
 #                flake8-useless-assert flake8-warnings flake8-comprehensions tryceratops
 #                flake8-datetimez flake8-implicit-str-concat flake8-return flake8-scream
 #                flake8-too-many flake8-broken-line flake8-pep3101 flake8-print flake8-use-pathlib
-#                flake8-functions-names flake8-variables-names pep8-naming
+#                flake8-functions-names flake8-variables-names pep8-naming flake8-bugbear
 
 # broken packages for now: flake8_strftime flake8-slots
 # for flake8_strtime use this repo: https://github.com/wwuck/flake8_strftime#master
