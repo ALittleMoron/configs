@@ -17,7 +17,9 @@ ZSH_THEME="robbyrussell"
 CASE_SENSITIVE="true"
 
 # plugins
+# poetry: https://python-poetry.org/docs/#oh-my-zsh
 plugins=(
+    poetry
     git
     aws
     zsh-interactive-cd
