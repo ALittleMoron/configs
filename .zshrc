@@ -19,13 +19,17 @@ CASE_SENSITIVE="true"
 # plugins
 # poetry: https://python-poetry.org/docs/#oh-my-zsh
 plugins=(
+    autoswitch_virtualenv
     poetry
+    python
     git
     aws
     zsh-interactive-cd
+    brew
     vscode
     command-not-found
     fzf
+    rust
 )
 
 source $ZSH/oh-my-zsh.sh
