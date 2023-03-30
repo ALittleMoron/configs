@@ -143,7 +143,7 @@
     "when": "workbench.explorer.openEditorsView.active"
   },
   {
-    "key": "ctrl+k e",
+    "key": "ctrl+k b",
     "command": "workbench.files.action.focusFilesExplorer"
   },
   {
@@ -152,7 +152,7 @@
     "when": "emptyWorkspaceSupport && workbenchState != 'empty'"
   },
   {
-    "key": "ctrl+k f",
+    "key": "ctrl+k e",
     "command": "workbench.action.focusActiveEditorGroup"
   },
   {
