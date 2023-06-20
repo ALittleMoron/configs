@@ -1,4 +1,3 @@
-// Поместите настраиваемые сочетания клавиш в этот файл, чтобы переопределить сочетания клавиш по умолчанию.
 [
   {
     "key": "ctrl+alt+'",
@@ -55,7 +54,8 @@
   },
   {
     "key": "ctrl+shift+f",
-    "command": "find-it-faster.findFiles"
+    "command": "actions.find",
+    "when": "editorFocus || editorIsOpen"
   },
   {
     "key": "ctrl+shift+j",
@@ -168,5 +168,9 @@
   {
     "key": "ctrl+k j",
     "command": "terminal.focus"
+  },
+  {
+    "key": "ctrl+,",
+    "command": "-workbench.action.openSettings"
   }
 ]
