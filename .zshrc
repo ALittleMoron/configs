@@ -42,5 +42,7 @@ alias fzfp='fzf --preview "bat --style=numbers --color=always {}"'
 alias ls='exa --icons -1'
 alias ll='exa --icons -lah'
 alias l='exa --icons -lh'
-alias tree='exa --tree'
+alias tree='exa --tree -I "__pycache__"'
 alias cat='bat --theme=gruvbox-dark'
+alias diff='delta'
+
