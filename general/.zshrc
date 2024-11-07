@@ -46,6 +46,7 @@ alias ls='exa --icons -1'
 alias ll='exa --icons -lah'
 alias l='exa --icons -lh'
 alias tree='exa --tree -I "__pycache__"'
+alias legacy_cat='/usr/bin/cat'
 alias cat='bat --theme=twoDark'
 alias diff='delta'
 alias python=python3
