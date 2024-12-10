@@ -31,6 +31,7 @@ plugins=(
     command-not-found
     fzf
     rust
+    zsh-syntax-highlighting
     zsh-autosuggestions
 )
 
@@ -45,10 +46,8 @@ alias ls='exa --icons -1'
 alias ll='exa --icons -lah'
 alias l='exa --icons -lh'
 alias tree='exa --tree -I "__pycache__"'
-alias cat='bat --theme=gruvbox-dark'
+alias legacy_cat='/usr/bin/cat'
+alias cat='bat --theme=twoDark'
 alias diff='delta'
 alias python=python3
 alias pip=pip3
-
-# post-init scripts
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
