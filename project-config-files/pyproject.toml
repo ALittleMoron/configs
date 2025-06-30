@@ -1,0 +1,100 @@
+[tool.ruff]
+select = ["ALL"]
+line-length = 100
+show-source = true
+exclude = [
+    ".git",
+    "__pycache__",
+    ".venv",
+    ".eggs",
+    "*.egg",
+    "dist",
+    "tests/fixtures/**",
+    "tests/**/snapshots/**",
+    "alembic",
+    "airich",
+]
+ignore = ["D100", "B008", "D104", "Q000", "S101", "PT016"]
+
+[tool.ruff.pydocstyle]
+convention = "numpy"
+ignore-decorators = ["typing.overload"]
+
+[tool.ruff.mccabe]
+max-complexity = 11
+
+[tool.ruff.flake8-bugbear]
+extend-immutable-calls = ["fastapi.Depends", "fastapi.Query"]
+
+[tool.ruff.extend-per-file-ignores]
+"__init__.py" = ["F401"]
+"*/migrations/versions/*" = ["D103"]
+
+
+[tool.black]
+line-length = 100
+skip-string-normalization = true
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+)/
+'''
+
+
+[tool.mypy]
+plugins = ["pydantic.mypy"]
+follow_imports = "silent"
+warn_redundant_casts = true
+warn_unused_ignores = true
+disallow_any_generics = true
+check_untyped_defs = true
+no_implicit_reexport = true
+
+# error configure
+pretty = true
+show_error_codes = true
+
+# for strict mypy
+disallow_untyped_defs = true
+
+
+[tool.pydantic-mypy]
+init_forbid_extra = true
+init_typed = true
+warn_required_dynamic_aliases = true
+warn_untyped_fields = true
+
+
+[tool.isort]
+profile = "black"
+line_length = 100
+multi_line_output = 3
+
+
+[tool.coverage]
+[tool.coverage.run]
+source = ["app"]
+branch = true
+omit = ['']
+[tool.coverage.report]
+exclude_lines = ["# noqa", "raise NotImplementedError"]
+
+
+[tool.pytest]
+testpath = "tests"
+
+
+[tool.bandit]
+exclude = ['tests']
+
+[tool.bandit.assert_used]
+skips = ['*_test.py', '*/test_*.py']
