@@ -52,3 +52,4 @@ alias cat='bat --theme=TwoDark'
 alias diff='delta'
 alias python=python3
 alias pip=pip3
+alias mfq="make fix && make quality"
