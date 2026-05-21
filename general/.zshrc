@@ -9,7 +9,11 @@ export AUTOSWITCH_DEFAULT_PYTHON="/usr/bin/python3"
 export EDITOR=nvim
 
 # init scripts
-eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    eval $(/opt/homebrew/bin/brew shellenv)
+else
+    eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+fi
 
 
 # theme
@@ -43,14 +47,19 @@ source $ZSH/oh-my-zsh.sh
 # aliases
 # for a full list of active aliases, run `alias`.
 alias fzfp='fzf --preview "bat --style=numbers --color=always {}"'
-alias ls='exa --icons -1'
-alias ll='exa --icons -lah'
-alias l='exa --icons -lh'
-alias tree='exa --tree -I "__pycache__"'
-alias legacy_cat='/usr/bin/cat'
+alias ls='eza --icons -1'
+alias ll='eza --icons -lah'
+alias l='eza --icons -lh'
+alias tree='eza --tree -I "__pycache__"'
 alias cat='bat --theme=TwoDark'
 alias diff='delta'
 alias python=python3
 alias pip=pip3
 alias mfq="make fix && make quality"
 
+## specific aliases
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  alias legacy_cat='/bin/cat'
+else
+  alias legacy_cat='/usr/bin/cat'
+fi
